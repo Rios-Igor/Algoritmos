@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    Quantas horas você dormiu? 
+    <input id="sono" type="text"><br>
+    <button onclick=horas(); style="margin-right: 5px;">Calcular Sono</button><br>
+    <div id="div_valores"></div>
+</body>
+</html>
+
+<script>
+    function horas(){
+
+            var x = Number(sono.value);
+
+            if (x > 9.6){
+                div_valores.innerHTML += (`<u>${x}</u> horas na <b>fase REM</b><br>`);
+            } else{
+                if (x > 6){
+                    div_valores.innerHTML += (`<u>${x}</u> horas na <b>fase 3</b><br>`);
+                 }else{
+                    if (x > 0.6 ){
+                        div_valores.innerHTML += (`<u>${x}</u> horas na <b>fase 2</b><br>`);
+                    }else{
+                             div_valores.innerHTML += (`<u>${x}</u> horas na <b>fase 1</b><br>`);
+                    }
+                }
+            } 
+
+            
+
+    }
+
+    </script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex4</title>
+</head>
+<body>
+    Entre com o peso de uma criança de 5 anos
+    <input type="text" id="peso" onchange="calcular()"><br>
+</body>
+</html>
+<script>
+    function calcular(){
+        var n = Number(peso.value);
+        if (n == 18.3){
+            alert ('Peso Perfeito!');
+        }else{
+            if (n > 21.2){
+                alert ('Acima do Peso!');
+            }else{
+                if (n < 13.5){
+                    alert ('Abaixo do Peso!');
+                }else{
+                    alert ('Peso na Média!');
+                }
+            }
+        }
+    }
+</script>

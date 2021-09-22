@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else ex6</title>
+</head>
+<body>
+    Qual a temperatura ambiente?
+    <input id="temp" type="text"><br>
+    <button onclick="calcular()">Analisar Clima</button>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        if (Number(temp.value) < 10){
+            resultados.innerHTML = (`Apropriado para conservar alimento<br>
+            <img src="https://www.iped.com.br/_upload/content/2015/03/03/identificar-alimentos-bom-estado.jpg" style="width: 150px; height: 150px;"><br>`);
+        }else{
+            resultados.innerHTML = (`Inapropriado para conservar alimento<br>
+            <img src="https://conteudo.imguol.com.br/c/entretenimento/1a/2018/09/11/pao-estragado-1536706056533_v2_450x450.jpg" style="width: 150px; height: 150px;"><br>`);
+        }
+    }
+</script>

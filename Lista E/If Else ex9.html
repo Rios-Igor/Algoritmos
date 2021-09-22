@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else ex9</title>
+</head>
+
+<body>
+    <select id="slc_main" onchange="escolha()">
+        <option value="">-- Escolha Uma Espécie --</option>
+        <option value="1">Ovíparos</option>
+        <option value="2">Mamiferos</option>
+    </select>
+
+    <select id="slc_mamif" onchange="escolham()" style="display: none;">
+        <option value="">-- Escolha Um Mamífero --</option>
+        <option value="1">Elefante</option>
+        <option value="2">Porco</option>
+        <option value="3">Coelho</option>
+    </select>
+
+    <select id="slc_ovi" onchange="escolhao()" style="display: none;">
+        <option value="">-- Escolha Um Ovíparo --</option>
+        <option value="1">Galinha</option>
+        <option value="2">Peixe</option>
+        <option value="3">Tartaruga</option>
+    </select>
+
+    <div id="resultados"></div>
+</body>
+
+</html>
+<script>
+    function escolha() {
+        if (Number(slc_main.value) == 1) {
+            slc_ovi.style.display = 'block';
+            resultados.innerHTML = ('');
+            slc_mamif.style.display = 'none';
+        } else {
+            if (Number(slc_main.value == 2)) {
+                slc_mamif.style.display = 'block';
+                resultados.innerHTML = ('');
+                slc_ovi.style.display = 'none';
+            } else {
+                slc_mamif.style.display = 'none';
+                resultados.innerHTML = ('');
+                slc_ovi.style.display = 'none';
+            }
+        }
+    }
+
+    function escolham() {
+        if (Number(slc_mamif.value) == 1) {
+            resultados.innerHTML = ('<img src="https://www.stoodi.com.br/wp-content/uploads/2019/02/elefante.jpg" style="width: 150px; height: 150px;">');
+        } else {
+            if (Number(slc_mamif.value) == 2) {
+                resultados.innerHTML = ('<img src="https://s2.glbimg.com/DJ9TJliDtmrx3Mm52bPXPo7NIIs=/e.glbimg.com/og/ed/f/original/2021/01/06/pexels-barbara-barbosa-4636980.jpg" style="width: 150px; height: 150px;">');
+            } else {
+                if (Number(slc_mamif.value) == 3) {
+                    resultados.innerHTML = ('<img src="https://www.infoescola.com/wp-content/uploads/2008/07/coelho.jpg" style="width: 150px; height: 150px;">');
+                } else {
+                    resultados.innerHTML = ('');
+                }
+            }
+        }
+    }
+
+    function escolhao() {
+        if (Number(slc_ovi.value) == 1) {
+            resultados.innerHTML = ('<img src="https://aventurasnahistoria.uol.com.br/media/_versions/galinharicajjajjda_widexl.jpg" style="width: 150px; height: 150px;">');
+        } else {
+            if (Number(slc_ovi.value) == 2) {
+                resultados.innerHTML = ('<img src="https://www.universodoaquario.com.br/image/cache/catalog/peixes/corais/peixes-palhaco-ocellaris-p-900x900.jpg" style="width: 150px; height: 150px;">');
+            } else {
+                if (Number(slc_ovi.value) == 3) {
+                    resultados.innerHTML = ('<img src="https://www.dicaspetz.com.br/wp-content/uploads/2020/05/como-criar-tartaruga.jpg" style="width: 150px; height: 150px;">');
+                } else {
+                    resultados.innerHTML = ('');
+                }
+            }
+        }
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else ex3</title>
+</head>
+<body>
+    Quantos chocolates você irá comprar?
+    <input id="qtd_chocolates" type="text"><br>
+    <button onclick="calcular()">Comprar</button>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        if (qtd_chocolates.value > 12){
+            var desc = Number(qtd_chocolates.value) * 2.5;
+            resultados.innerHTML += (`O valor da sua compra foi de: R$${desc.toFixed(2)}<br>`);
+        }else{
+            var sdesc = Number(qtd_chocolates.value) * 3;
+            resultados.innerHTML += (`O valor da sua compra foi de: R$${sdesc.toFixed(2)}<br>`);
+        }
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex6</title>
+</head>
+<body>
+    Qual time grande de São Paulo você torce?
+    <input type="text" id="time">
+    <button onclick="vertime()">Falar sobre esse time</button> 
+</body>
+</html>
+<script>
+    function vertime(){
+        var n = String(time.value);
+        if (n == 'corinthians'){
+            alert ('Salve o Corinthians!');
+        }else{
+            if (n == 'palmeiras'){
+                alert ('Salve o alviverde imponente!');
+            }else{
+                if (n == 'santos'){
+                    alert ('Agora quem da a bola é o Santos!');
+                }else{
+                    if (n == 'são paulo'){
+                        alert ('Salve o tricolor paulista!');
+                    }else{
+                        alert ('Escreva o nome corretamente!');
+                    }
+                }
+            }
+        }
+    }
+</script>

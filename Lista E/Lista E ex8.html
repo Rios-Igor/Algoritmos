@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+
+<body>
+    Quantos kWh é consumido no mês?
+    <input id="kwh" type="text"><br>
+    <button onclick="calcular()">Calcular conta de luz</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var t = Number(kwh.value) * 0.85;
+        if (Number(kwh.value) < 100) {
+            var td = t - (Number(kwh.value) * 0.1);
+            alert(`Você irá pagar R$${td.toFixed(2)} na sua conta`);
+        } else {
+            alert(`Você irá pagar R$${t.toFixed(2)} na sua conta`);
+        }
+    }
+</script>

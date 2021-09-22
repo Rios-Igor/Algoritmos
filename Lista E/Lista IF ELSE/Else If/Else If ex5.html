@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex5</title>
+</head>
+<body>
+    Entre com a nota do aluno:
+    <input type="text" id="nota"><br>
+    <button onclick="calcular()">Classificar Aluno</button>
+</body>
+</html>
+<script>
+    function calcular(){
+        var n = Number(nota.value);
+        if (n > 9.5){
+            alert ('Aluno fora da curva!');
+        }else{
+            if (n > 7){
+                alert ('Aluno acima da média!');
+            }else {
+                if (n >= 5){
+                    alert ('Aluno na média!');
+                }else{
+                    alert ('Aluno precisa de ajuda!');
+                }
+            }
+        }
+    }
+</script>

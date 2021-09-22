@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex10</title>
+</head>
+<body>
+    Qual seu nome?
+    <input type="text" id="nome"><br>
+    Quanto você tem de saldo?
+    <input type="text" id="saldo"><br>
+    <button onclick="calcular()">Verificar Conta</button><br><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var a = String(nome.value);
+        var b = Number(saldo.value);
+
+        if (b < 0){
+            resultados.innerHTML = (`Com o saldo de R$${b.toFixed(2)} o cliente ${a} está com saldo devedor`);
+        }else{
+            if (b > 5000){
+                resultados.innerHTML = (`Com o saldo de R$${b.toFixed(2)} o cliente ${a} TEM PERFIL DE INVESTIDOR`);
+            }else{
+                if (b > 2000){
+                    resultados.innerHTML = (`Com o saldo de R$${b.toFixed(2)} o cliente ${a} está com saldo ACIMA DA MÉDIA`);
+                }else{
+                    resultados.innerHTML = (`Com o saldo de R$${b.toFixed(2)} o cliente ${a} está com saldo NORMAL`);
+                }
+            }
+        }
+    }
+</script>

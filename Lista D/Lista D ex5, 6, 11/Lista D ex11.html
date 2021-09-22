@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    <select id="sel_moeda">
+        <option value="">Selecione a Moeda ...</option>
+        <option value="1">1 Real</option>
+        <option value="2">2 Reais</option>
+        <option value="5">5 Reais</option>
+        <option value="10">10 Reais</option>
+        <option value="20">20 Reais</option>
+        <option value="50">50 Reais</option>
+        <option value="100">100 Reais</option>
+        <option value="200">200 Reais</option>
+        
+    </select>
+    <br>
+    <br>
+    <button onclick="mostrar()">Depositar</button><button style="margin-left: 3px;" onclick="gastar()">Gastar a Grana</button>
+    <br><br >
+    <div id="div_resultados">
+    O saldo do cofrinho é de: R$ <b>0.00</b><br>
+    A quantidade de operações foi: <b>0</b><br>
+    Média dos depósitos: R$ <b>0.00</b><br>
+    </div>
+</body>
+</html>
+<script>
+    var cof = 0;
+    var op = 0;
+    var media = 0;
+
+    function mostrar(){
+        op ++;
+        var r = Number(sel_moeda.value);
+        cof = cof + r;
+        media = cof / op;
+        div_resultados.innerHTML = (`O saldo do cofrinho é de: R$ <b>${cof.toFixed(2)}</b><br>
+                                    A quantidade de operações foi: <b>${op}</b><br>
+                                    Média dos depósitos: R$ <b>${media.toFixed(2)}</b><br>`);
+    }
+
+    function gastar(){       
+        var r = Number(sel_moeda.value);
+        op = 0;
+        cof = 0;
+        media = 0;
+        div_resultados.innerHTML = (`O saldo do cofrinho é de: R$ <b>${cof.toFixed(2)}</b><br>
+                                    A quantidade de operações foi: <b>${op}</b><br>
+                                    Média dos depósitos: R$ <b>${media.toFixed(2)}</b><br>`);
+    }
+</script>

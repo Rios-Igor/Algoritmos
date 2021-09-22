@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    Quantas latinha de refrigerante você toma por dia?
+    <input id="refris" type="text"><br>
+    <button onclick="calcular()">Quantos Refris?</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var r = Number(refris.value);
+        var t = r * 365;
+
+        if (t < 500){
+        resultados.innerHTML = (`Você Consome ${t} latinhas por ano.`);
+        }else{
+            resultados.innerHTML = (`Você Consome ${t} latinhas por ano.<br>
+            Cuidado com a diabetes!`);
+        }
+    }
+</script>

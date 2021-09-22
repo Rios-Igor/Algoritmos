@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex18</title>
+</head>
+<body style="font-family: 'Lucida Sans';">
+
+
+    <div id="vidacena" style="color: red;"><h2>Vida do Lutador: 1000</h2></div>
+    <img style="width: 300px;" src="https://1.bp.blogspot.com/-vbn8vcC-Pfo/YROngKS6j3I/AAAAAAAAPoY/kNFYU_qHNiEPxRifZ82TWjXOSoU9nwALgCLcBGAsYHQ/s1200/cena.jpg" id="fotocena"><br>
+    <div id="botaocena">
+    <button onclick="apanharcena()">Apanhar</button>
+    <button onclick="concentrarcena()">Concentrar Força</button><br><br>
+    </div>
+   
+    <div id="vidavin" style="color: red;"><h2>Vida do Lutador: 1000</h2></div><br>
+    <img style="width: 300px;" src="https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/08/velozes-e-furiosos-9.jpg" id="fotovin"><br>
+    <div id="botaovin">
+    <button onclick="apanharvin()">Apanhar</button>
+    <button onclick="concentrarvin()">Concentrar Força</button><br><br>
+    </div>
+
+</body>
+</html>
+<script>
+    var vcena = 1000;
+    var vin = 1000;
+
+    function apanharcena(){
+        vcena = vcena - 100;
+        vidacena.innerHTML = (`<h2>Vida do Lutador: ${vcena.toFixed(2)}</h2>`)
+
+        if (vcena <= 0){
+            vidacena.innerHTML = (`<h2>O LUTADOR JA ERA!</h2>`)
+            fotocena.src ='https://i.ytimg.com/vi/srJtycqvNOQ/maxresdefault.jpg';
+            botaocena.style.display = 'none';
+            botaovin.style.display = 'none';
+        }
+    }
+
+    function apanharvin(){
+        vin = vin - 100;
+        vidavin.innerHTML = (`<h2>Vida do Lutador: ${vin.toFixed(2)}</h2>`)
+
+        if (vin <= 0){
+            vidavin.innerHTML = (`<h2>O LUTADOR JA ERA!</h2>`)
+            fotovin.src ='sangvin.png';
+            botaocena.style.display = 'none';
+            botaovin.style.display = 'none';
+        }
+    }
+
+    function concentrarcena(){
+        vcena = vcena + (vcena * 0.05);
+        vidacena.innerHTML = (`<h2>Vida do Lutador: ${vcena.toFixed(2)}</h2>`)
+    }
+
+    function concentrarvin(){
+        vin = vin + (vin * 0.05);
+        vidavin.innerHTML = (`<h2>Vida do Lutador: ${vin.toFixed(2)}</h2>`)
+    }
+</script>

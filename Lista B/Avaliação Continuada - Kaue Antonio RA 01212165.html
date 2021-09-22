@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Continuada</title>
+</head>
+<body>
+
+    <!--
+       A - Imagem do carro com 150px de altura
+    -->
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpT6PN3aemYsMKrt3o6K3E1x4rjg3LVnUJIQ&usqp=C" style="height: 150px;"><br>
+
+    <!--
+       B - 2 Inputs com o valor do carro e o total de parcelas
+    -->
+    Entre com o valor do carro: 
+    <input type="text" id="valorcarro">
+    Entre com a quantidade de parcelas que serão pagas: 
+    <input type="text" id="parcelascarro"><br>
+
+    <!--
+       C - Imagem da moto com 150px de altura
+    -->   
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKIrfs2nLFu0g7E0uBaN5wf-ConsKuaw_E_g&usqp=CAU" style="height: 150px;"><br>
+
+    <!--
+       D - 2 Inputs com o valor da moto e o total de parcelas
+    -->
+    Entre com o valor da moto: 
+    <input type="text" id="valormoto">
+    Entre com a quantidade de parcelas que serão pagas: 
+    <input type="text" id="parcelasmoto"><br>
+
+    <!--
+       E - Botão Simular Compra
+    -->
+    <button onclick="simularcompra()">Simular compra</button><br>
+
+    <!--
+        Declarando a div para inserção dos resultados
+    -->
+    <div id="divresultado"></div>
+</body>
+</html>
+<script> //Começando o Script
+    function simularcompra(){ //Chamando a função do botão simularcompra()  
+
+        var vcarro = Number(valorcarro.value); //Valor do carro utilizando o id do input
+
+        var vmoto = Number(valormoto.value); //Valor da moto utilizando o id do input
+
+        var total = vcarro + vmoto; //Soma dos valores dos veículos
+
+        var pcarro = (vcarro * 100) / total; //Cálculo de porcentagem do carro
+
+        var pmoto = (vmoto * 100) / total; //Cálculo de porcentagem da moto
+
+        var mesescarro = Number(parcelascarro.value); //Total de parelas do carro utilizando o id do input
+
+        var mesesmoto = Number(parcelasmoto.value);  //Total de parelas da moto utilizando o id do input
+
+        var vpcarro = vcarro / mesescarro; //Cálculo do valor das parcelas do carro
+
+        var vpmoto = vmoto / mesesmoto; //Cálculo do valor das parcelas da moto
+
+        var tparcelas = vpmoto + vpcarro; //Soma para saber o total das parcelas
+
+            /*
+                Abaixo o innerHTML utilziando as variaveis acima, junto também com o link da imagem e as divs de porcentagem
+            */
+            
+            divresultado.innerHTML += (`<b><u><i>ANÁLISE DOS VALORES DE COMPRA</i></b></u><br>
+
+            O valor <b>total</b> dos veículos é de <b>R$ ${total}</b><br>
+
+            O carro representa <b style="color: lightblue;">${pcarro}%</b> do valor total dos veículos e a moto <b style="color: lightgreen;">${pmoto}%</b><br>
+
+            <b><i><u>ANÁLISE DAS PRESTAÇÕES</b></i></u><br>
+
+            <img src="https://blog.explicae.com.br/wp-content/uploads/2020/09/explicae-blog-calculo-quimico-800x500.png" style="height: 150px;"><br>
+
+            O <span style="background-color:chartreuse">carro</span> será pago em <b style="color:lightblue">${mesescarro}</b> meses e cada parcela será de <b style="color:lightblue">R$${vpcarro}</b><br>
+
+            O <span style="background-color: aqua;">moto</span> será pago em <b style="color:lightgreen">${mesesmoto}</b> meses e cada parcela será de <b style="color:lightgreen">R$${vpmoto}</b><br>
+
+            <i>A soma da parcela mensal do carro e da moto é de <b>R$${tparcelas}</b><i><br>
+
+            <div id="div_porcentagem" style="height: 30px; background-color: blue;">.</div><br>
+
+            <div id="div_porcentagem2" style="height: 30px; background-color: green;">.</div><br>
+
+            `);
+
+            div_porcentagem.style.width = `${pcarro}%`; //Atribuindo a porcentagem do carro na div_porcentagem
+
+            div_porcentagem2.style.width = `${pmoto}%`; //Atribuindo a porcentagem da moto na div_porcentagem2
+    }
+//Terminando o Script
+</script>

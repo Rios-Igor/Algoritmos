@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    Quanto você tem de saldo na conta?
+    <input id="saldo" type="text"><br>
+    <button onclick="calcular()">Verificar finanças</button>
+</body>
+</html>
+<script>
+    function calcular(){
+        var valor = Number(saldo.value);
+
+        if (valor == 0){
+            alert (`Conta Zerada!`);
+        }else{
+            if (valor < 0){
+                alert (`Está Devendo!`)
+            }else{
+                alert (`Saldo Positivo!`);
+            }
+        }
+    }
+</script>

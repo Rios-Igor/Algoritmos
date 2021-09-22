@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 17</title>
+</head>
+
+
+<body>
+
+<h1>Mundial De Clubes </h1>
+
+<div id="corinthians" style="float: left; margin: 5px;">
+    <img src="corinthians.png" onclick="corinthians()" style=" height: 50px;">
+</div>
+
+<div style="float: left; margin: 5px;">
+    <img src="saopaulo.png" onclick="saopaulo()" style=" height: 50px;">
+</div>
+
+<div style="float: left; margin: 5px;">
+    <img src="palmeiras.png" onclick="palmeiras()" style="height: 50px;">
+</div>
+
+<div style="float: left; margin: 5px;">
+    <img src="santos.png" onclick="santos()" style="height: 50px;">
+</div>
+
+<div>
+    <button style="margin: 5px; float: left;" onclick="apagar()">
+        <b>Resetar Programa</b>
+    </button>
+</div>
+
+<div id="div_esconder"><div>
+    <button style="margin: 5px; float: left;" onclick="sumir()">
+        <b>Esconder Escudos</b>
+    </button>   
+</div></div>
+
+<div id="div_mostrar"><div>
+    <button style="margin: 5px; float: left;" onclick="mostrar()">
+        <b>Mostrar Escudos</b>
+    </button>   
+</div></div>
+
+
+<br><br><br><br>
+
+
+<div id="imagem">
+</div>
+</body>
+
+<br><br><br><br>
+
+
+
+
+</body>
+</html>
+<script>
+function corinthians() {
+    imagem.innerHTML = '<img src="taca.jfif" height="100px"><img src="taca.jfif" height="100px">';
+}
+
+function saopaulo() {
+    imagem.innerHTML = '<img src="taca.jfif" height="100px"><img src="taca.jfif" height="100px"><img src="taca.jfif" height="100px">';
+}
+
+function palmeiras() {
+    imagem.innerHTML = '<img src="porco.jfif" style="height: 200px;">';
+}
+
+function santos() {
+    imagem.innerHTML = '<img src="taca.jfif" height="100px"><img src="taca.jfif" height="100px">';
+}
+
+function apagar() {
+    imagem.innerHTML = '';
+}
+
+function sumir(){
+    imagem.innerHTML = '<hidden>';
+    div_esconder.innerHTML = '<hidden>';
+    div_mostrar.innerHTML = '';
+}
+
+function mostrar(){
+    div_mostrar.innerHTML = '<visible>';
+}
+</script>

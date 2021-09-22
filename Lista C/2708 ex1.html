@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+</head>
+<body>
+    <div id="menu">
+
+    Entre Com o Nome Do Produto: 
+    <input id="nomep" type="text"><br>
+    Entre Com a Quantidade:
+    <input id="qtd" type="text"><br>
+    Entre Com o Valor Unitário Do Produto:
+    <input id="valoru" type="text"><br>
+    <img id="imgcarrinho" onclick="comprar()" src="https://img.freepik.com/vetores-gratis/carrinho-de-supermercado-realista-cheio-de-itens_1284-35992.jpg?size=338&ext=jpg&ga=GA1.2.2000491267.1629936000" style="width: 150px; height: 150px;">
+    
+    </div>
+
+
+    <div id="botoes" style="display: none;">
+    
+    <button onclick="novamente()">Comprar Mais</button>
+    <button onclick="finalizar()">Finalizar</button>
+    <div id="resultados"></div> 
+    </div>
+    
+</body>
+</html>
+<script>
+    var qtdi = 0;
+    var totalv = 0;
+        
+
+    function comprar(){
+        
+        var total = Number(qtd.value) * Number(valoru.value);
+        totalv = totalv + total;
+        qtdi = qtdi + Number(qtd.value);
+        menu.style.display = 'none';
+        botoes.style.display = 'block';
+        resultados.innerHTML += (`O orçamento da quantidade ${Number(qtd.value)} do produto ${nomep.value} é de R$ ${total}<br>`);   
+    }
+    function novamente(){
+        menu.style.display = 'block';
+        botoes.style.display = 'none';
+    }    
+    function finalizar(){
+        menu.style.display = 'block';
+        botoes.style.display = 'none';
+        alert(`A quantidade de itens orçados foi de ${qtdi} e a soma desses orçamentos foi de R$ ${totalv}`);
+        qtdi = 0;
+        totalv = 0;
+        resultados.innerHTML = (``);
+    }
+</script>

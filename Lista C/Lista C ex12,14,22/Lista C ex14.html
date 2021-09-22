@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    <button onclick="iniciar()">Iniciar Jogo</button><br><br>
+
+
+    <div id="jogo" style="display: none;">
+
+    <img src="Cena.jpg" style="width: 150px; height: 200px;" onclick="cena()"><br>
+    <div id="golpes_sofridoscena">
+        Golpes sofridos pelo The Rock: <b>0</b>
+    </div>
+
+    <div id="div_vidacena" style="width: 100%; height: 15px; background-color: red;"></div><br>
+
+
+    <img src="rock.jpg" style="width: 150px; height: 200px;" onclick="rock()"><br>
+    <div id="golpes_sofridosrock">
+        Golpes sofridos pelo John Cena: <b>0</b>
+    </div>
+    <div id="div_vidarock" style="width: 100%; height: 15px; background-color: red;"></div>
+
+    
+
+    </div>
+
+
+</body>
+</html>
+<script>
+    var vidacena = 100;
+    var vidarock = 100;
+    var gtr = 0;
+    var gjc = 0;
+
+
+    function iniciar(){
+        jogo.style.display = 'block';
+    }
+
+    function cena(){
+        vidacena = vidacena - 5;
+        gjc ++;
+        golpes_sofridoscena.innerHTML = (`Golpes sofridos pelo The Rock: <b>${gjc}</b>`);
+        div_vidacena.style.width = `${vidacena}%`;
+    }
+
+
+    function rock(){
+        vidarock = vidarock - 5;
+        gtr ++;
+        golpes_sofridosrock.innerHTML = (`Golpes sofridos pelo John Cena: <b>${gtr}</b>`);
+        div_vidarock.style.width = `${vidarock}%`;
+    }
+</script>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex14</title>
+</head>
+
+<body>
+    <button onclick="soma()">Nota 1</button>
+    <button onclick="soma1()"> Nota 2</button>
+    <button onclick="soma2()">Nota 3</button>
+    <button onclick="soma3()">Nota 4</button>
+    <button onclick="soma4()">Nota 5</button>
+    <div id="resultados">
+        <h3>Sua Avaliação: </h3>
+    </div>
+    <img src="" id="imagem" style="width: 300px;">
+</body>
+
+</html>
+<script>
+    var n = 0;
+    var v = 0;
+    var media = 0;
+    function soma() {
+        n++;
+        v++;
+        media = n / v;
+        if (media > 4.5) {
+            resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+            imagem.src = 'http://www.escolaterrabrasil.com.br/uploads/images/2021/05/uma-crianca-feliz-e-sadia-e-1622046944.jpg';
+        } else {
+            if (media > 3) {
+                resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                imagem.src = 'https://st.depositphotos.com/1394201/1397/i/600/depositphotos_13971485-stock-photo-happy-child-girl-with-hands.jpg';
+            } else {
+                if (media >= 2) {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://img.pebmed.com.br/wp-content/uploads/2020/04/01015633/coronav%C3%ADrus_cardiopatia_crian%C3%A7a.jpg.webp';
+                } else {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://nova-escola-producao.s3.amazonaws.com/Z6mBDyQVBdHfbAXAvSsG7fgeQqdB7cMnHFBmZZtf7tHsMTukADHYbCcXxE5D/crianca-chora-birra-educacao-infantil-getty-images.jpg';
+                }
+            }
+        }
+    }
+
+    function soma1() {
+        n = n + 2;
+        v++;
+        media = n / v;
+        if (media > 4.5) {
+            resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+            imagem.src = 'http://www.escolaterrabrasil.com.br/uploads/images/2021/05/uma-crianca-feliz-e-sadia-e-1622046944.jpg';
+        } else {
+            if (media > 3) {
+                resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                imagem.src = 'https://st.depositphotos.com/1394201/1397/i/600/depositphotos_13971485-stock-photo-happy-child-girl-with-hands.jpg';
+            } else {
+                if (media >= 2) {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://img.pebmed.com.br/wp-content/uploads/2020/04/01015633/coronav%C3%ADrus_cardiopatia_crian%C3%A7a.jpg.webp';
+                } else {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://nova-escola-producao.s3.amazonaws.com/Z6mBDyQVBdHfbAXAvSsG7fgeQqdB7cMnHFBmZZtf7tHsMTukADHYbCcXxE5D/crianca-chora-birra-educacao-infantil-getty-images.jpg';
+                }
+            }
+        }
+    }
+
+    function soma2() {
+        n = n + 3;
+        v++;
+        media = n / v;
+        if (media > 4.5) {
+            resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+            imagem.src = 'http://www.escolaterrabrasil.com.br/uploads/images/2021/05/uma-crianca-feliz-e-sadia-e-1622046944.jpg';
+        } else {
+            if (media > 3) {
+                resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                imagem.src = 'https://st.depositphotos.com/1394201/1397/i/600/depositphotos_13971485-stock-photo-happy-child-girl-with-hands.jpg';
+            } else {
+                if (media >= 2) {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://img.pebmed.com.br/wp-content/uploads/2020/04/01015633/coronav%C3%ADrus_cardiopatia_crian%C3%A7a.jpg.webp';
+                } else {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://nova-escola-producao.s3.amazonaws.com/Z6mBDyQVBdHfbAXAvSsG7fgeQqdB7cMnHFBmZZtf7tHsMTukADHYbCcXxE5D/crianca-chora-birra-educacao-infantil-getty-images.jpg';
+                }
+            }
+        }
+    }
+
+    function soma3() {
+        n = n + 4;
+        v++;
+        media = n / v;
+        if (media > 4.5) {
+            resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+            imagem.src = 'http://www.escolaterrabrasil.com.br/uploads/images/2021/05/uma-crianca-feliz-e-sadia-e-1622046944.jpg';
+        } else {
+            if (media > 3) {
+                resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                imagem.src = 'https://st.depositphotos.com/1394201/1397/i/600/depositphotos_13971485-stock-photo-happy-child-girl-with-hands.jpg';
+            } else {
+                if (media >= 2) {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://img.pebmed.com.br/wp-content/uploads/2020/04/01015633/coronav%C3%ADrus_cardiopatia_crian%C3%A7a.jpg.webp';
+                } else {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://nova-escola-producao.s3.amazonaws.com/Z6mBDyQVBdHfbAXAvSsG7fgeQqdB7cMnHFBmZZtf7tHsMTukADHYbCcXxE5D/crianca-chora-birra-educacao-infantil-getty-images.jpg';
+                }
+            }
+        }
+    }
+
+    function soma4() {
+        n = n + 5;
+        v++;
+        media = n / v;
+        if (media > 4.5) {
+            resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+            imagem.src = 'http://www.escolaterrabrasil.com.br/uploads/images/2021/05/uma-crianca-feliz-e-sadia-e-1622046944.jpg';
+        } else {
+            if (media > 3) {
+                resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                imagem.src = 'https://st.depositphotos.com/1394201/1397/i/600/depositphotos_13971485-stock-photo-happy-child-girl-with-hands.jpg';
+            } else {
+                if (media >= 2) {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://img.pebmed.com.br/wp-content/uploads/2020/04/01015633/coronav%C3%ADrus_cardiopatia_crian%C3%A7a.jpg.webp';
+                } else {
+                    resultados.innerHTML = (`<h3>Sua Avaliação: ${media.toFixed(1)}</h3>`);
+                    imagem.src = 'https://nova-escola-producao.s3.amazonaws.com/Z6mBDyQVBdHfbAXAvSsG7fgeQqdB7cMnHFBmZZtf7tHsMTukADHYbCcXxE5D/crianca-chora-birra-educacao-infantil-getty-images.jpg';
+                }
+            }
+        }
+    }
+</script>

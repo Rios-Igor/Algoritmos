@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 17</title>
+</head>
+<body>
+
+<h1>A História De Uma Pizza</h1> 
+
+<div style="float: left; margin: 8px;">
+    <button onclick=acabou_chegar();>
+        Acabou de Chegar
+    </button>
+</div>
+
+<div style="float: left; margin: 8px;">
+    <button onclick=um_minuto();>
+        Depois De 1 Minuto
+    </button>
+</div>
+
+<div style="float: left; margin: 8px;">
+    <button onclick=cinco_minutos();>
+        Depois de 5 Minutos
+    </button>
+</div>
+
+<div style="float: left; margin: 8px;">
+    <button onclick=quinze_minutos();>
+        Depois de 15 Minutos
+    </button>
+</div>
+<br><br><br>
+<div id="imagem" style="float: left;">
+</div>
+
+
+</body>
+</html>
+<script>
+function acabou_chegar() {
+    imagem.innerHTML = '<img src="pizzacompleta.jpg" style="height: 150px;">';
+}
+function um_minuto() {
+    imagem.innerHTML = '<img src="semduasfatias.jpg" style="height: 150px;">';
+}
+function cinco_minutos() {
+    imagem.innerHTML = '<img src="pizzametade.jpg" style="height: 150px;">';
+}
+function quinze_minutos() {
+    imagem.innerHTML = '<img src="restopizza.jpg" style="height: 150px;">';
+}
+</script>

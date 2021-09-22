@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+
+<body>
+    Quantos filhos você tem?
+    <input id="filhos" type="text"><br>
+    <button onclick="calcular()">Analisar Família</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var vf = Number(filhos.value);
+        resultados.innerHTML = ('');
+        if (vf >= 1) {
+            resultados.innerHTML += (`Não tem tv<br>`);
+            if (vf >= 2) {
+                resultados.innerHTML += (`Não tem internet<br>`);
+                if (vf >= 3) {
+                    resultados.innerHTML += (`Não tem video game<br>`);
+                    if (vf >= 4) {
+                        resultados.innerHTML += (`Não tem netflix<br>`);
+
+                    }
+                }
+            }
+        }
+    }
+</script>

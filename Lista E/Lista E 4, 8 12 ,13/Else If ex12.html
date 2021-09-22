@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex12</title>
+</head>
+<body>
+    <div id="resultados"><h1>Você já clicou: 0 vezes. Dedo fraquinho, hein!</h1></div>
+    <button onclick="calcular()">Clica neu!</button><br><br>
+</body>
+</html>
+<script>
+    var a = 0;
+    function calcular(){
+        a++;
+        
+        
+        if (a < 5){
+            resultados.innerHTML = (`<h1>Você já clicou: ${a} vezes. Dedo fraquinho, hein!</h1>`)
+        }else{
+            if (a > 15){
+                resultados.innerHTML = (`<h1>Você já clicou: ${a} vezes. Eita dedo nervoso!</h1>`)
+            }else{
+                if (a > 10){
+                    resultados.innerHTML = (`<h1>Você já clicou: ${a} vezes. Gosta de clicar, hein!</h1>`)
+                }else{
+                    resultados.innerHTML = (`<h1>Você já clicou: ${a} vezes. Dedo bom, mano!</h1>`)
+                }
+            }
+        }
+    }
+</script>

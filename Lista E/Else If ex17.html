@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex17</title>
+</head>
+<body>
+    Qual a distância da pizzaria até a sua casa?
+    <input type="text" id="distancia" placeholder="Distância em Km"><br>
+    <button onclick="verificar()">Verificar Disponibilidade</button>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        var d = Number(distancia.value);
+
+        if (d >= 25){
+            resultados.innerHTML = ('A Pizza Rãti não entrega neste endereço!');
+        }else{
+            if (d > 5){
+                resultados.innerHTML = ('A sua pizza será entregue, porém o valor de entrega é de R$ 25,00"');
+            }else{
+                resultados.innerHTML = ('A sua pizza será entregue e não custará nada para você!');
+            }
+        }
+    }
+</script>

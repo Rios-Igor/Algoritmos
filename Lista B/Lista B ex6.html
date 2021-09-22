@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    Entre com o sabor da pizza: 
+    <input id="sabor" type="text"><br>
+    Entre com o preço da pizza:
+    <input id="preco" type="text"><br>
+    Quantos amigos vão comer?
+    <input id="amigos" type="text"><br>
+    <button onclick=calcular();>Ver valor por amigo</button><br>
+    <div id="div_valores">
+</body>
+</html>
+<script>
+    function calcular(){
+            div_valores.innerHTML += (`Cada amigo vai colaborar com: <u>R$${Number(preco.value) / Number(amigos.value)}</u> para a piza de ${sabor.value}<br>`);
+    }
+    </script>

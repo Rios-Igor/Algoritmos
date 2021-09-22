@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex11</title>
+</head>
+
+<body>
+    <select onchange="combo()" id="slc_mes">
+        <option value="">Escolha um mês</option>
+        <option value="1">Janeiro</option>
+        <option value="2">Fevereiro</option>
+        <option value="3">Março</option>
+        <option value="4">Abril</option>
+        <option value="5">Maio</optton>
+        <option value="6">Junho</option>
+        <option value="7">Julho</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setembro</opttion>
+        <option value="10">Outubro</option>
+        <option value="11">Novembro</option>
+        <option value="12">Dezembro</option>
+    </select>
+</body>
+
+</html>
+<script>
+    function combo() {
+        var n = Number(slc_mes.value);
+        if (n == 1) {
+            alert('Janeiro: Verão');
+        } else {
+            if (n == 2) {
+                alert('Fevereiro: Verão');
+            } else {
+                if (n == 3) {
+                    alert('Março: Outono');
+                } else {
+                    if (n == 4) {
+                        alert('Abril: Outono');
+                    } else {
+                        if (n == 5) {
+                            alert('Maio: Outono');
+                        } else {
+                            if (n == 6) {
+                                alert('Junho: Inverno');
+                            } else {
+                                if (n == 7) {
+                                    alert('Julho: Inverno');
+                                } else {
+                                    if (n == 8) {
+                                        alert('Agosto: Inverno');
+                                    } else {
+                                        if (n == 9) {
+                                            alert('Setembro: Primavera');
+                                        } else {
+                                            if (n == 10) {
+                                                alert('Outubro: Primavera');
+                                            } else {
+                                                if (n == 11) {
+                                                    alert('Novembro: Pimavera')
+                                                } else {
+                                                    if (n == 12) {
+                                                        alert('Dezembro: Verão');
+                                                    } else {
+                                                        alert('Selecione Um Mês Para Continuar!');
+                                                    }
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>

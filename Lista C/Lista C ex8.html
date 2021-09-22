@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista C ex8</title>
+</head>
+<body>
+    Entre com o valor do carro: 
+    <input type="text" id="valorc"><br>
+    Entre com a taxa de juros: 
+    <input type="text" id="tjuros"><br>
+    Entre com a quantidade de parcelas: 
+    <input type="text" id="qparc"><br>
+    <button onclick="calcular()">Calcular Prejú</button><br><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var razao = (Number(tjuros.value) / 100) + 1;
+        var preju = Number(valorc.value) * 0.8;
+        var primp = (Number(valorc.value) / Number(qparc.value));
+        var parcn = Number(qparc.value);
+        var somat = (primp * ((razao**parcn) - 1)) / (razao - 1);
+        var corr = somat / Number(valorc.value);
+
+        resultados.innerHTML = (`Seu carro vai sair por um total de <b>R$${somat.toFixed(2)}</b>. Após 1 mês, ele já vai valer só <b>R$${preju.toFixed(2)}</b>. Porque comprou financiado, vai pagar o correspondente a <b>${corr.toFixed(2)}</b> carros.`)
+    }
+</script>

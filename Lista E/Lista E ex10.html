@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+
+<body>
+    Qual o saldo da sua conta?
+    <input id="saldo" type="text"><br>
+    Qual o valor do débito?
+    <input id="deb" type="text"><br>
+    <button onclick="calcular()">Analisar conta</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        resultados.innerHTML = ('');
+        var t = Number(saldo.value) - Number(deb.value);
+        if (t < 0) {
+            resultados.innerHTML += (`<b style="color: red">O saldo atual da conta corrente é de R$${t.toFixed(2)}</b>`);
+        } else {
+            resultados.innerHTML += (`O saldo atual da conta corrente é de R$${t.toFixed(2)}`);
+        }
+    }
+</script>

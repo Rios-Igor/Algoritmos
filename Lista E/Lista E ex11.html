@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    Quantos homens entraram no elevador?
+    <input id="homens" type="text"><br>
+    Quantas mulheres entraram no elevador?
+    <input id="mulheres" type="text"><br>
+    <button onclick="calcular()">Analisar peso</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        resultados.innerHTML = ('');
+        var th = Number(homens.value) * 80;
+        var tm = Number(mulheres.value) * 60;
+        var t = tm + th;
+        if (t <= 800){
+            resultados.innerHTML += (`Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${t.toFixed(2)}kg`);
+        }else{
+            resultados.innerHTML += (`Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${t.toFixed(2)}kg<br>`);
+            resultados.innerHTML += (`<span style="color: blue">Será necessário descer alguém para que o elevador se movimente</span>`);
+        }
+    }
+</script>

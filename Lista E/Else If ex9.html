@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex9</title>
+</head>
+<body>
+    Qual sua meta de economia?
+    <input type="text" id="meta"><br>
+    Quanto você tem guardado?
+    <input type="text" id="guardado"><br>
+    <button onclick="calcular()">Analisar Economia</button>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var a = Number(meta.value);
+        var b = Number(guardado.value);
+        var c = b - a;
+        var d = a - b;
+
+        if (a <= b){
+            resultados.innerHTML = (`Parabéns, meta alcançada!<br>
+            Meta ultrapassada em R$${c.toFixed(2)}`);
+        }else{
+            resultados.innerHTML = (`Força! Ainda em busca da meta!<br>
+             Falta R$${d.toFixed(2)}`);
+        }
+    }
+</script>

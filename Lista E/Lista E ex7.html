@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    Qual o valor da pizza?
+    <input id="valor" type="text"><br>
+    Quantos amigos estão reunidos?
+    <input id="amigos" type="text"><br>
+    <button onclick="calcular()">Rola a pizza?</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        resultados.innerHTML = ('');
+        var v = Number(valor.value) / Number(amigos.value);
+        if(v <= 20){
+            resultados.innerHTML += (`Cada amigo vai pagar R$${v.toFixed(2)} pela pizza.<br>`);
+        }else{
+            resultados.innerHTML += (`Cada amigo vai pagar R$${v.toFixed(2)} pela pizza.<br>`);
+            resultados.innerHTML += (`Deu ruim, pizza muito cara!<br>`);
+        }
+    }
+</script>

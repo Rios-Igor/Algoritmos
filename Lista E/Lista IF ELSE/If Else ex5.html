@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else ex5</title>
+</head>
+<body>
+    Entre com sua primeira nota:
+    <input id="pnota" type="text"><br>
+    Entre com sua segunda nota:
+    <input id="snota" type="text"><br>
+    <button onclick="calcular()">Verificar Situação</button>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var media = (Number(pnota.value) + Number(snota.value)) / 2;
+        if (media >= 6){
+            alert ('Parabéns, Aprovado!');
+        }else{
+            alert ('Tente outra vez...');
+        }
+    }
+</script>

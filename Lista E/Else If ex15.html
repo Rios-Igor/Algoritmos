@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex15</title>
+</head>
+<body>
+    Quantas partidas o atacante jogou?
+    <input id="partidas" type="text"><br>
+    Quantos gols ele marcou?
+    <input id="gols" type="text"><br>
+    <button onclick="calcular()">Estudar Atacante</button><br><br>
+    <div id="resultados"></div>
+    <img style="width: 300px;" src="" id="imagem">
+</body>
+</html>
+<script>
+    var g = 0;
+    var p = 0;
+    var media = 0;
+    function calcular(){
+        g = Number(gols.value);
+        p = Number(partidas.value);
+        media = g / p;
+
+        if (media < 0.2){
+            resultados.innerHTML = ('Melhor Mudar De Posição!');
+            imagem.src = 'http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcRwtBvZsgqF8VopYPGdy3mOXwHkl-TyJQwP6XDV0VBg_QanPmgjVftbHJ_L2qME';
+        }else{
+            if (media <= 0.6){
+                resultados.innerHTML = ('Atacante Mediano!');
+                imagem.src = 'https://conteudo.imguol.com.br/c/esporte/a9/2020/07/24/neymar-atacante-do-psg-em-21-de-julho-de-2020-1595615429683_v2_450x337.jpg';
+            }else{
+                resultados.innerHTML = ('Atacante de Futuro!')
+                imagem.src = 'https://s2.glbimg.com/ivenTCx2U965CNVz4ICVvpaU-N4=/0x154:853x1280/984x0/smart/filters:strip_icc()/s.glbimg.com/es/ge/f/original/2018/10/08/whatsapp_image_2018-10-08_at_15.42.11.jpeg';
+            }
+        }
+    }
+</script>

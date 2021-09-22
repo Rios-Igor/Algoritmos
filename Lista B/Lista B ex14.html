@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    Quantas votos teve Zé Buduia? 
+    <input id="zebuduia" type="text"><br>
+    Quantas votos teve Maria Bigodenha? 
+    <input id="mariab" type="text"><br>
+    Quantas votos brancos tiveram? 
+    <input id="brancos" type="text"><br>
+    Quantas votos nulos tiveram? 
+    <input id="nulos" type="text"><br>
+    <button onclick="calcular()">Resultado da Eleição</button><br>
+    <div id="div_valores"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){         
+        var zb = Number(zebuduia.value)
+        var mb = Number(mariab.value)
+        var vbrancos = Number(brancos.value)
+        var vnulos = Number(nulos.value)
+        var tvotos = (zb + mb) + (vbrancos + vnulos);
+        var inv = vbrancos + vnulos;
+        var pze = (zb * 100) / tvotos;
+        var pmb = (mb * 100) / tvotos;
+        var piv = (inv * 100) / tvotos;
+
+        
+                div_valores.innerHTML += (`<b>Total de votos: <u>${tvotos}</u><br>
+                    Zé Buduia: </b>${pze}% (${zb} Votos)<br>
+                    <b>Maria Bigodenha:</b> ${pmb}% (${mb} Votos)<br>
+                    <b>Inválidos:</b> ${piv}% (${inv} Votos)`);
+    }
+
+    </script>

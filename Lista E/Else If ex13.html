@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex13</title>
+</head>
+<body>
+    <div id="resultados"><h1>Valor guardado: R$ 0.00.</h1></div>
+    <button onclick="guardar()">Guardar R$ 5.00</button>
+    <button onclick="gastar()">Gastar R$ 10.00</button><br><br>
+</body>
+</html>
+<script>
+    var a = 0;
+    function guardar(){
+        a = a + 5;
+        
+        
+        if (a < -20){
+            resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)}.<br>
+                <span style="color: red">Finanças em perigo!</span><br>
+                    Quase um Corinthians!</h1>`)
+        }else{
+            if (a < 0){
+                resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)}.<br>
+                <span style="color: red">Finanças em perigo!</span></h1>`)
+            }else{
+                if (a <= 100){
+                    resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)}.<br>
+                <span style="color: blue">Finanças OK!</span></h1>`)
+                }else{
+                    resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)}.<br>
+                <span style="color: blue">Finanças OK!</span><br>
+                    #Ostentação!</h1>`)
+                }
+            }
+        }
+    }
+
+    function gastar(){
+        a = a - 10;        
+        
+        if (a < -20){
+            resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)}.<br>
+                <span style="color: red">Finanças em perigo!</span><br>
+                    Quase um Corinthians!</h1>`)
+        }else{
+            if (a < 0){
+                resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)}.<br>
+                <span style="color: red">Finanças em perigo!</span></h1>`)
+            }else{
+                if (a <= 100){
+                    resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)}.<br>
+                <span style="color: blue">Finanças OK!</span></h1>`)
+                }else{
+                    resultados.innerHTML = (`<h1>Valor guardado: R$ ${a.toFixed(2)} .<br>
+                <span style="color: blue">Finanças OK!</span><br>
+                    #Ostentação!</h1>`)
+                }
+            }
+        }
+    }
+
+</script>

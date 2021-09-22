@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    Ki base do guerreiro: 
+    <input id="kibase" type="text"><br>
+    Transformar em: <br> 
+    <button onclick=ssj(); style="margin-right: 5px;">SSJ</button><button onclick=ssj2(); style="margin-right: 5px;">SSJ2</button><button onclick=ssj3();>SSJ3</button><br>
+    <div id="div_valores"></div>
+</body>
+</html>
+
+<script>
+    function ssj(){
+
+            var x = Number(kibase.value);
+            var a = x * 50;
+
+            div_valores.innerHTML += (`Após se tranformar em <u>SSJ</u>, O KI desse Sayajin passa a ser de <u>${a}</u><br>`);
+    }
+    function ssj2(){
+
+            var y = Number(kibase.value);
+            var b =  y * 100;
+
+            div_valores.innerHTML += (`Após se tranformar em <u>SS2</u>, O KI desse Sayajin passa a ser de <u>${b}</u><br>`);
+}
+    function ssj3(){
+
+            var z = Number(kibase.value);
+            var c = z * 200;
+
+            div_valores.innerHTML += (`Após se tranformar em <u>SS3</u>, O KI desse Sayajin passa a ser de <u>${c}</u><br>`);
+}
+    </script>

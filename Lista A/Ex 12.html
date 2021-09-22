@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 12</title>
+</head>
+<body>
+    <h1>Brasil x Alemanha</h1>
+    
+<div style="float: left; margin: 8px;">
+    <button onclick=gol_br();>
+        Gol do Brasil
+    </button>
+</div>
+
+<div style="float: left; margin: 8px;">
+    <button onclick=gol_alemanha();>
+        Gol da Alemanha
+    </button>
+</div>
+<br><br>
+<h3><b>Tempo Real Do Jogo</b></h3>
+<div id="temporeal">
+
+</div>
+</body>
+</html>
+<script>
+    function gol_br() {
+    temporeal.innerHTML += '<b style="color: green;">É goooolll do Brasil!!! </b><br><br>';
+}
+function gol_alemanha() {
+    temporeal.innerHTML += '<b style="color: yellow; background-color: darkred;">É goooolll da Alemanha!!! </b><br><br>';
+}
+
+</script>

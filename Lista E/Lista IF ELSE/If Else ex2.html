@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Else ex2</title>
+</head>
+<body>
+    Qual o saldo da sua conta?
+    <input id="saldo" type="text"><br>
+    Qual o valor do débito?
+    <input id="debito" type="text"><br>
+    <button onclick="calcular()">Analisar Conta</button>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var total = Number(saldo.value) - Number(debito.value);
+        if (total > 0){
+            resultados.innerHTML += (`<i style="color: blue">O saldo da sua conta corrente é de R$${total.toFixed(2)}</i><br>`);
+        }else{
+            resultados.innerHTML += (`<b style="color: red">O saldo da sua conta corrente é de R$${total.toFixed(2)}</b><br>`);
+        }
+    }
+</script>

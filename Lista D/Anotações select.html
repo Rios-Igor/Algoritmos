@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selects</title>
+</head>
+<body>
+    <!--
+        A tag select plota uma combo box ou uma lista suspensa na tela
+        A tela <option> é uma opção de <select>
+        Select colocamos um só, ai dentro do select colocamos os options para ter itens na nossa lista do select
+        NÃO COLOCAMOS ID NA OPTION, NÃO FAZ SENTIDO!
+
+        É possível uma "orientação" numa select.
+        nada mais do que uam option sem valor
+        como um texto de orientação no corpo da tag
+
+        atributo onchange="algo()";
+
+    -->
+    <select id="sel_estudar" onchange="mostrar()">
+        <option value="">Selecione a Matéria ...</option>
+        <option value="HTML">Algoritmos</option>
+        <option value="Criação De Tabelas">Banco De Dados</option>
+        <option value="Binário, Arduino">Arquitetura Computacional</option>
+    </select>
+    <button onclick="mostrar()">Mostrar</button>
+</body>
+</html>
+<script>
+    function mostrar(){
+        alert("Você tem que estudar : " + sel_estudar.value);
+    }
+</script>

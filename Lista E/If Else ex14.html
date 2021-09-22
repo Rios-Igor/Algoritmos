@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title>If Else ex14</title>
+</head>
+
+<body>
+    Digite o sabor da pizza:
+    <input autofocus id="sabor" placeholder="Sabor"><br>
+
+    <select id="slc_sabor1" onchange="escolhas1()">
+        <option value="0">-- Escolha Um Item --</option>
+        <option value="1">Queijo</option>
+        <option value="2">Presunto</option>
+        <option value="3">Ovo</option>
+        <option value="4">Frango</option>
+        <option value="5">Catupiry</option>
+    </select>
+
+    <select id="slc_sabor2" onchange="escolhas2()">
+        <option value="0">-- Escolha Um Item --</option>
+        <option value="1">Queijo</option>
+        <option value="2">Presunto</option>
+        <option value="3">Ovo</option>
+        <option value="4">Frango</option>
+        <option value="5">Catupiry</option>
+    </select>
+
+    <select id="slc_sabor3" onchange="escolhas3()">
+        <option value="0">-- Escolha Um Item --</option>
+        <option value="1">Queijo</option>
+        <option value="2">Presunto</option>
+        <option value="3">Ovo</option>
+        <option value="4">Frango</option>
+        <option value="5">Catupiry</option>
+    </select>
+    <br>
+    <div id="resultados" style="float: left;"></div>
+    <div id="resultados2" style="float: left;"></div>
+    <div id="resultados3" style="float: left;"></div>
+    <br><br><br><br><br><br><br><br><br>
+    <button onclick="calcular()">Calcular preço da pizza</button>
+    <br>
+    <div id="resultados4"></div>
+</body>
+
+</html>
+<script>
+    function escolhas1() {
+        if (Number(slc_sabor1.value) == 1) {
+            resultados.innerHTML = ('<img src="https://marketplace.triibo.com.br/wp-content/uploads/2020/02/queijo-artesanal-almeida-guimaraes-2_B.jpg" style="width: 150px; height: 150px;">');
+        } else {
+            if (Number(slc_sabor1.value) == 2) {
+                resultados.innerHTML = ('<img src="https://foodsafetybrazil.org/wp-content/uploads/2020/05/shutterstock_175169105.jpg" style="width: 150px; height: 150px;">');
+            } else {
+                if (Number(slc_sabor1.value) == 3) {
+                    resultados.innerHTML = ('<img src="https://feiradoceasa.com.br/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/o/v/ovo_branco_1.jpg" style="width: 150px; height: 150px;">');
+                } else {
+                    if (Number(slc_sabor1.value) == 4) {
+                        resultados.innerHTML = ('<img src="https://img.itdg.com.br/tdg/images/recipes/000/156/760/128132/128132_original.jpg" style="width: 150px; height: 150px;">');
+                    } else {
+                        if (Number(slc_sabor1.value) == 5) {
+                            resultados.innerHTML = ('<img src="https://www.bistek.com.br/media/catalog/product/cache/15b2f1f06e1cd470c80b1f3fd7ec8301/1/9/1956108.jpg" style="width: 150px; height: 150px;">');
+                        } else {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function escolhas2() {
+        if (Number(slc_sabor2.value) == 1) {
+            resultados2.innerHTML = ('<img src="https://marketplace.triibo.com.br/wp-content/uploads/2020/02/queijo-artesanal-almeida-guimaraes-2_B.jpg" style="width: 150px; height: 150px;">');
+        } else {
+            if (Number(slc_sabor2.value) == 2) {
+                resultados2.innerHTML = ('<img src="https://foodsafetybrazil.org/wp-content/uploads/2020/05/shutterstock_175169105.jpg" style="width: 150px; height: 150px;">');
+            } else {
+                if (Number(slc_sabor2.value) == 3) {
+                    resultados2.innerHTML = ('<img src="https://feiradoceasa.com.br/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/o/v/ovo_branco_1.jpg" style="width: 150px; height: 150px;">');
+                } else {
+                    if (Number(slc_sabor2.value) == 4) {
+                        resultados2.innerHTML = ('<img src="https://img.itdg.com.br/tdg/images/recipes/000/156/760/128132/128132_original.jpg" style="width: 150px; height: 150px;">');
+                    } else {
+                        if (Number(slc_sabor2.value) == 5) {
+                            resultados2.innerHTML = ('<img src="https://www.bistek.com.br/media/catalog/product/cache/15b2f1f06e1cd470c80b1f3fd7ec8301/1/9/1956108.jpg" style="width: 150px; height: 150px;">');
+                        } else {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function escolhas3() {
+        if (Number(slc_sabor3.value) == 1) {
+            resultados3.innerHTML = ('<img src="https://marketplace.triibo.com.br/wp-content/uploads/2020/02/queijo-artesanal-almeida-guimaraes-2_B.jpg" style="width: 150px; height: 150px;">');
+        } else {
+            if (Number(slc_sabor3.value) == 2) {
+                resultados3.innerHTML = ('<img src="https://foodsafetybrazil.org/wp-content/uploads/2020/05/shutterstock_175169105.jpg" style="width: 150px; height: 150px;">');
+            } else {
+                if (Number(slc_sabor3.value) == 3) {
+                    resultados3.innerHTML = ('<img src="https://feiradoceasa.com.br/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/o/v/ovo_branco_1.jpg" style="width: 150px; height: 150px;">');
+                } else {
+                    if (Number(slc_sabor3.value) == 4) {
+                        resultados3.innerHTML = ('<img src="https://img.itdg.com.br/tdg/images/recipes/000/156/760/128132/128132_original.jpg" style="width: 150px; height: 150px;">');
+                    } else {
+                        if (Number(slc_sabor3.value) == 5) {
+                            resultados3.innerHTML = ('<img src="https://www.bistek.com.br/media/catalog/product/cache/15b2f1f06e1cd470c80b1f3fd7ec8301/1/9/1956108.jpg" style="width: 150px; height: 150px;">');
+                        } else {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    function calcular() {
+        var total = Number(slc_sabor1.value) + Number(slc_sabor2.value) + Number(slc_sabor3.value);
+        resultados4.innerHTML = (`<b>A pizza de ${sabor.value} vai custar um total de <u>R$${total.toFixed(2)}</b></u>`);
+    }
+
+</script>

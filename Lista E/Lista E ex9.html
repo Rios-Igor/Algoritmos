@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+
+<body>
+    Qual sua renda familiar?
+    <input id="renda" type="text"><br>
+    Qual o valor das prestações?
+    <input id="prest" type="text"><br>
+    <button onclick="calcular()">Verificar financiamento</button>
+    <br><br>
+    <div id="resultados"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        resultados.innerHTML = ('');
+        var p = (Number(prest.value) * 100) / Number(renda.value);
+        if (p > 30) {
+            resultados.innerHTML += (`A prestação corresponde a ${p}% da renda familiar<br>`);
+            resultados.innerHTML += (`<b style="color: red">Será necessário complementar a renda familiar</b>`);
+        } else {
+            resultados.innerHTML += (`A prestação corresponde a ${p}% da rensa familiar`);
+        }
+    }
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    Entre com o seu nome: 
+    <input id="nome" type="text"><br>
+    Digite a quantidade de aulas totais do curso:
+    <input id="quantidade" type="text"><br>
+    Quantas aulas o aluno faltou?
+    <input id="faltas" type="text"><br>
+    <button onclick=calcular();>Calcular frequência</button><br>
+    <div id="div_valores">
+</body>
+</html>
+
+<script>
+    function calcular(){
+
+            var x = Number(faltas.value);
+            var y = Number(quantidade.value);   
+            var z = (100) - [(x * 100) / (y)];
+
+
+            div_valores.innerHTML += (`<span style="color: blue">Olá, ${nome.value}! Sua frequência foi de: <b>${z}</span>%</b><br>
+            <div id="div_porcentagem" style="height: 20px; background-color: red;">.</div>`);
+            div_porcentagem.style.width = `${z}%`;
+    }
+    </script>

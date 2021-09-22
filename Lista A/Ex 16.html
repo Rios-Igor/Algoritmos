@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 17</title>
+</head>
+<body>
+
+<h1>O Que faz um triatleta</h1> 
+
+<div style="float: left; margin: 8px;">
+    <button onclick=nada();>
+        Nada
+    </button>
+</div>
+
+<div style="float: left; margin: 8px;">
+    <button onclick=corre();>
+        Corre
+    </button>
+</div>
+
+<div style="float: left; margin: 8px;">
+    <button onclick=pedala();>
+        Pedala
+    </button>
+</div>
+
+<br><br><br>
+<div id="imagem" style="float: left;">
+</div>
+
+
+</body>
+</html>
+<script>
+function nada() {
+    imagem.innerHTML = '<img src="nadando.jpg" style="height: 150px;">';
+}
+function corre() {
+    imagem.innerHTML = '<img src="correndo.jpg" style="height: 150px;">';
+}
+function pedala() {
+    imagem.innerHTML = '<img src="pedalando.jfif" style="height: 150px;">';
+}
+</script>

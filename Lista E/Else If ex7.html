@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Else If ex7</title>
+</head>
+
+<body>
+    Qual o valor que você tem economizado?
+    <input type="text" id="valore"><br>
+    <button onclick="calcular()">Poder de compra</button><br><br>
+    <div id="resultados"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var n = Number(valore.value);
+        resultados.innerHTML = ('');
+        if (n < 0) {
+            resultados.innerHTML += ('Nada de Compras!!');
+        } else {
+            if (n >= 4000) {
+                resultados.innerHTML += ('Viajem de ida e volta pra Praia Grande!!<br>');
+                resultados.innerHTML += ('Uma boa moto usada!!<br>');
+                resultados.innerHTML += ('Mais alguma bobagem legal!!');
+            } else {
+                if (n > 100) {
+                    resultados.innerHTML += ('Viajem de ida e volta pra Praia Grande!!<br>');
+                    resultados.innerHTML += ('Uma boa moto usada!!');
+                } else {
+                    resultados.innerHTML += ('Viajem de ida e volta pra Praia Grande!!');
+                }
+            }
+        }
+    }
+</script>

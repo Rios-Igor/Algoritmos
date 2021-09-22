@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    <div id="div_valores">Valor guardado no cofrinho: R$ 0.00</div><br>
+    <div id="div_depositos">Quantidade de depósitos feitos: <b>0</b></div><br>
+    <div id="div_retiradas">Quantidade de retiradas feitas: <b>0</b></div><br>
+
+
+    Entre com o valor depositado:
+    <input id="deposito" type="text"><br><br>
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="tirartudo()">Tirar toda a grana</button>
+</body>
+</html>
+<script>
+    var valorg = 0;
+    var depositos = 0;
+    var retiradas = 0;
+
+    function depositar(){
+        var vdp = Number(deposito.value);
+        valorg = valorg + vdp;
+        depositos ++;
+        div_valores.innerHTML = (`Valor guardado no cofrinho: R$ ${valorg}`);
+        div_depositos.innerHTML = (`Quantidade de depósitos feitos: <b>${depositos}</b>`);
+    }
+
+    function tirartudo(){
+        retiradas ++;
+        valorg = 0;
+        div_valores.innerHTML = (`Valor guardado no cofrinho: R$ ${valorg}`);
+        div_retiradas.innerHTML = (`Quantidade de retiradas feitas: <b>${retiradas}</b>`);
+    }
+</script>

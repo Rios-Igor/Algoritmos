@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img style="width: 300px;" src="https://1.bp.blogspot.com/-vbn8vcC-Pfo/YROngKS6j3I/AAAAAAAAPoY/kNFYU_qHNiEPxRifZ82TWjXOSoU9nwALgCLcBGAsYHQ/s1200/cena.jpg" id="fotocena"><br>
+    <div id="vidacena" style="width: 300px; height: 30px; background-color: red;"><br><br>
+    <button onclick="apanharcena()">Apanhar</button><br>
+    <img style="width: 300px;" src="https://observatoriodocinema.uol.com.br/wp-content/uploads/2021/08/velozes-e-furiosos-9.jpg" id="fotovin"><br>
+    <div id="vidavin" style="width: 300px; height: 30px; background-color: red;"><br><br>
+    <button onclick="apanharvin()">Apanhar</button>
+</body>
+</html>
+<script>
+    var vcena = 300;
+    var vin = 300;
+    
+    function apanharcena(){
+        vcena = vcena - 25;
+        vidacena.style.width = (`${vcena}px`);
+
+        if (vcena == 0){
+            fotocena.src = "https://www.metropax.com.br/wp-content/uploads/2021/05/Captura-de-Tela-2021-05-26-a%CC%80s-17.05.44.jpg.webp";
+        }else{
+
+        }
+    }
+
+    function apanharvin(){
+        vin = vin -25;
+        vidavin.style.width = (`${vin}px`);
+
+        if (vin == 0){
+            fotovin.src = "https://www.metropax.com.br/wp-content/uploads/2021/05/Captura-de-Tela-2021-05-26-a%CC%80s-17.05.44.jpg.webp";
+    }
+}
+</script>
