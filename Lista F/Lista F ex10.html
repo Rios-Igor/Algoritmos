@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex10</title>
+</head>
+<body>
+    Entre com o intervalo de altura desejada para os próximos pilotos: <br>
+    <input type="text" placeholder="Altura Inicial" id="altura1" onchange="alturaini()"><br>
+    <input type="text" placeholder="Altura Final" id="altura2" onchange="alturafin()"><br><br><br>
+
+    Qual o seu nome?
+    <input type="text" id="nomecand" placeholder="Nome"><br>
+    Entre com sua altura: 
+    <input type="text" id="alturacand" onchange="ver()" placeholder="Altura"><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    var a1 = 0;
+    var a2 = 0;
+
+    function ver(){
+        var acand = Number(alturacand.value);
+        var nomec = String(nomecand.value);
+
+        if (acand >= a1 && acand <= a2){
+                resultados.innerHTML += (`O candidato ${nomec} com altura de ${acand} participará do processo de seleção de piloto.<br>`);
+            }else{
+                resultados.innerHTML += (`Infelizmente o candidato ${nomec} com altura de ${acand} não atende os requisitos.<br>`);
+            }
+    }
+
+    function alturaini(){
+        a1 = Number(altura1.value);
+
+        if (a1 < 1){
+            alert ('NÃO SEGUIR EM FRENTE!');
+            a1 = 0;
+            a2 = 0;
+            altura1.value = '';
+            altura2.value = '';
+        }
+        
+    }
+
+    function alturafin(){
+        a2 = Number(altura2.value);
+
+        if (a2 < a1){
+            alert ('NÃO SEGUIR EM FRENTE!');
+            a1 = 0;
+            a2 = 0;
+            altura1.value = '';
+            altura2.value = '';
+        }
+    }
+</script>

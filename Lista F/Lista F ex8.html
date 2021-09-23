@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex8</title>
+</head>
+<body>
+    Entre com o login do usuário: 
+    <input type="text" id="login" placeholder="login"><br>
+    Entre com a senha do usuário: 
+    <input type="password" id="senha" placeholder="senha"><br>
+    <button onclick="entrar()">Entrar</button>
+</body>
+</html>
+<script>
+    function entrar(){
+        var a = String(login.value);
+        var b = String(senha.value);
+
+        if (a == 'bandtec' && b == 'digital'){
+            alert ('Usuário autenticado com sucesso!');
+        }else{
+            alert ('Falha na autenticação!');
+        }
+
+    }
+</script>

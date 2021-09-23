@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex9</title>
+</head>
+<body>
+    Qual o login do usuário? 
+    <input type="text" id="usuario" placeholder="Usuário" autofocus><br>
+    Qual a senha do usuário?
+    <input type="password" id="senha" placeholder="Senha"><br>
+    Qual o código de segurança? 
+    <input type="passwor" id="codseg" placeholder="Código de Segurança"><br>
+    <button onclick="entrar()">Entrar</button>
+</body>
+</html>
+<script>
+    function entrar(){
+        var a = String(usuario.value);
+        var b = String(senha.value);
+        var c = Number(codseg.value);
+
+        if (a == 'bandtec' && b == 'digital' && c == 123){
+            alert ('Usuário autenticado com sucesso!');
+        }else{
+            alert ('Falha na autenticação!');
+        }
+    }
+    </script>

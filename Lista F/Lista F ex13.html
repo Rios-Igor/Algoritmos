@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex13</title>
+</head>
+<body>
+    Quantos anos você trabalhou para o pai da pretendente?
+    <input type="text" id="anos" placeholder="Quantidade de anos trabalhados"><br>
+    Entre com a quantidade de kilos por hectare que suas plantações renderam: 
+    <input type="text" id="kilos" placeholder="Quantidade de kilos por hectare"><br>
+    Quantos dias você faltou ao trabalho por estar doente? 
+    <input type="text" id="faltas" placeholder="Quantidade de faltas por estar doente"><br>
+    <button onclick="calcular()">Deu Match?</button>
+    <div id="resultados">
+    </div>
+    <img id="imgres" style="width: 300px;" src="">
+
+</body>
+</html>
+<script>
+    function calcular(){
+        var a = Number(anos.value);
+        var b = Number(kilos.value);
+        var c = Number(faltas.value);
+
+        if (a >= 5 && b >= 300 && c <= 5){
+            resultados.innerHTML = ('Minha filha será sua!');
+            imgres.src = 'https://julianarakoza.com/wp-content/uploads/2020/03/maquiagem-de-noiva-10.jpg';
+        }else{
+            resultados.innerHTML = ('Deu ruim! Trabalhe mais 2 anos');
+            imgres.src = 'https://media.istockphoto.com/photos/angry-old-man-pointing-his-finger-with-rage-at-you-against-white-picture-id174142479';
+        }
+    }
+</script>

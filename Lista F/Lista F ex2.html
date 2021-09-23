@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex3</title>
+</head>
+<body>
+    Entre com a sua renda: 
+    <input type="text" id="renda"><br>
+    Entre com sua renda total familiar: 
+    <input type="text" id="familiar"><br>
+    <button onclick="calcular()">Verificar Ajuda</button>
+</body>
+</html>
+<script>
+    function calcular(){
+       var r = Number(renda.value);
+       var rf = Number(familiar.value);
+       
+        if (r <= 1050 && rf <= 2100){
+            alert ('Você terá direito!');
+        }else{
+            alert ('Você NÃO terá direito!');
+        }
+    }
+    </script>

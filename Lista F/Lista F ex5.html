@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex5</title>
+</head>
+<body>
+    Qual horário do dia você costuma acessar o Netflix?
+    <input type="text" id="dianet" placeholder="em formato 24h"><br>
+    <button onclick="calcular()">Ver recomendações</button>
+</body>
+</html>
+<script>
+    function calcular(){
+        var a = Number(diainet.value);
+
+        if (a >= 19 && a <= 21){
+            alert (`Não é recomendável que você assista sua série favorita no horário ${a}!`)
+        }else{
+            alert (`O horário ${a} é adequado para assistir sua série favorita!`)
+        }
+    }
+    </script>

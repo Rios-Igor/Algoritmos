@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex12</title>
+</head>
+<body>
+    Quantas passagens você pretende adquirir?
+    <input type="text" placeholder="Número de passagens" autofocus id="passagens"><br>
+    <button onclick="comprar()">Comprar</button><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+        var d = 0;
+    function comprar(){
+        var p = Number(passagens.value);
+        var vp = p * 4.4;
+        
+
+        if (p >= 8 && p <= 50){
+            if (p >= 8 && p <= 19){
+                d = (p * 0.03) + p;
+                resultados.innerHTML += (`Total a pagar: R$${d.toFixed(2)}`);
+            }else{
+                if (p >= 20 && p <= 49){
+                    d = (p * 0.05) + p;
+                resultados.innerHTML += (`Total a pagar: R$${d.toFixed(2)}`);
+                }else{
+                    if (p == 50)
+                        d = (p * 0.07) + p;
+                resultados.innerHTML += (`Total a pagar: R$${d.toFixed(2)}`);
+                    
+                }
+            }
+        }else{
+            alert('Quantidade inválida!');
+        }
+    }
+</script>

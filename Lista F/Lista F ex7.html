@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex7</title>
+</head>
+<body>
+    Entre com a nota do aluno: 
+    <input type="text" placeholder="Nota do aluno" autofocus id="nota"><br>
+    Entre com a frequência do aluno: 
+    <input type="text" placeholder="Frequência do aluno" id="frequencia"><br>
+    <button onclick="calcular()">Avaliar Aluno</button>
+</body>
+</html>
+<script>
+    function calcular(){
+        var n = Number(nota.value);
+        var f = Number(frequencia.value);
+
+        if (n >= 6 && f >= 75){
+            alert ('Parabéns! Aprovado!');
+        }else{
+            alert ('Infelizmente, não foi desta vez');
+        }
+    }
+    </script>
