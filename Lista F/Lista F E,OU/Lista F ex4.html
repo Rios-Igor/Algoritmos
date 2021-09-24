@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex4 E/OU</title>
+</head>
+<body>
+    <input type="text" id="login" placeholder="Login">
+    <input type="text" id="senha" placeholder="Senha">
+    <input type="text" id="info" placeholder="Informação Pessoal"><br>
+    <button onclick="calcular()">Autenticar</button><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var l = String(login.value);
+        var s = String(senha.value);
+        var i = String(info.value);
+
+        if (l == 'ana' && s == 'braga' && (i == '1960' || i == 'louro jose')){
+            resultados.innerHTML += ("Usuário Autenticado!<br>");
+        }else{
+            resultados.innerHTML += ('Falha na Autenticação!<br>');
+        }
+    }
+</script>
