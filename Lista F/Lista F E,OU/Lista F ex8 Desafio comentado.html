@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F Desafio Ex8</title>
+</head>
+
+<body>
+    <!-- 
+       a)     Reproduza os elementos que estão na tela abaixo
+     -->
+    <div id="pag1">
+         
+        <h1>Seja Bem Vindo ao Banco KNAB</h1><br>
+        <h2>Simulação de Empréstimo e Investimentos</h2><br><br><br>
+        <h3>Entre Com os Dados da Sua Conta</h3>
+        <input type="text" id="conta" placeholder="Conta">
+        <input type="texr" id="digito" placeholder="Dígito">
+        <input type="password" id="senha" placeholder="Senha"><br><br>
+        <button onclick="simular()">Simular</button>
+    </div>
+<!-- ------------------------------------------------------------------------------ -->
+
+    <!-- 
+       c)      Apague a tela anterior e reproduza os elementos que estão na tela abaixo, sendo que as operações (1ª select) são Empréstimo e Investimento, e os Prazos (2ª select) são Curto, Médio e Longo.
+     -->
+    <div id="pag2" style="display: none;">
+        <h1>O Banco KNAB é a Sua Melhor Opção</h1><br>
+        <h2>Empréstimo e Investimentos com as Melhores Taxas do Mercado</h2><br><br><br>
+        <h3>Entre Com os Dados da Sua Simulação</h3><br><br>
+        <input id="val_op" placeholder="Valor" type="text"><br><br>
+        <select id="slc_operacoes">
+            <option value="0">Escolha uma operação</option>
+            <option value="emprestimo">Empréstimo</option>
+            <option value="investimento">Investimento</option>
+        </select>
+
+        <select id="slc_prazo">
+            <option value="0">Escolha o Prazo</option>
+            <option value="curto">Curto</option>
+            <option value="medio">Médio</option>
+            <option value="longo">Longo</option>
+        </select>
+        <br><br>
+        <button onclick="resultado()">Mostrar Resultado</button>
+    </div>
+<!-- ------------------------------------------------------------------------------ -->
+
+
+<!-- c.       Se a operação for empréstimo, emitir na página, sem apagar as mensagens de simulações anteriores, a seguinte mensagem:
+“Simulação XX – Para o empréstimo de R$99999,99 no PPPPPP prazo será cobrado os juros de R$ 99999,99 ao ano”
+Sendo que XX é um número sequencial crescente a cada simulação, ou seja, 01 para a primeira, 02 para a segunda etc.
+
+d.      Se a operação for investimento, emitir na página, sem apagar as mensagens de simulações anteriores, a seguinte mensagem:
+“Simulação XX – Investindo R$99999,99 no PPPPPP prazo o seu rendimento será de R$ 99999,99 ao ano”
+Sendo que XX é um número sequencial crescente a cada simulação, ou seja, 01 para a primeira, 02 para a segunda etc. -->
+
+    <div id="resultados"></div>
+<!-- ------------------------------------------------------------------------------ -->
+
+
+
+    <!-- e)     Tenha um botão “Voltar a Simulação” que quando clicado retorna para o item c). -->
+    <div id="botao" style="display: none;">
+
+        <button onclick="voltar()">Voltar Simulaçao</button>
+    </div>
+<!-- ------------------------------------------------------------------------------ -->
+
+</body>
+
+</html>
+<script>
+    var c = 0; // Variável para o ipt da conta
+    var d = 0; // Variável para o ipt do digito
+    var s = ''; // Variável para o ipt da senha
+    var r = 0; // Variável para pegar o resto da divisao
+    var cont = 0; // Variável para atribuir os valores do total de simulações feitas
+    var v = 0; // Variável para o ipt valor do empréstimo/investimento da segunda página
+    var op = ''; // Variável para pegar o valor da select de operações
+    var pr = ''; // Variável para pegar o valor da select de prazos
+    var juros = 0; // Variável para armazenar o valor dos juros
+/*
+b)     Quando o botão “Simular” for clicado vá para o item c) somente se os dados da conta estiverem válidos, caso contrário emitir um alerta explicativo.
+a.       Conta tem que ser diferente de zero;
+b.      Digito que que ser igual ao resto da divisão da conta por 11;
+c.       Senha tem que ser igual a:
+                                                  i.      “manaus” se o digito for 0, 1, 2 ou 3;
+                                                ii.      “recife” se o digito estiver entre 4 e 7;
+                                              iii.      “fortaleza” para os demais dígitos;
+ */
+    function simular() {
+        
+        c = Number(conta.value); //Atribuindo o input da conta na variavel C
+        d = Number(digito.value); //Atribuindo o input do digito na variavel D
+        s = String(senha.value); //Atribuindo o input da senha na variavel S
+        r = c % 11; // Pegando o resto da divisão da conta por 11 e atribuindo na variável R
+
+        if (c != 0) { //Se a conta inserida no input for diferente de 0, segue para a próxima condição
+            if (r == d) { // Se digito for igual ao resto da divisao da conta, seguir para a próxima condição
+                if (r >= 0 && r <= 3) { //Se o digito for maior ou igual a 0 e menor igual a 3 continuar a condição
+                    if (s == 'manaus') {// Se a senha for manaus continua a condição
+                        alert ('Logado Com Sucesso, Seja Bem Vindo!'); // Um alert qualquer de bem vindo
+                        pag1.style.display = 'none';// Tiro a primeira página
+                        pag2.style.display = 'block';// Coloco a segunda página
+                    } else {
+                        alert('Digite a senha correta!'); // Se a senha nao for igual a manaus, retorna um erro
+                    }
+                } else {
+                    if (r >= 4 && r <= 7) {//Se o digito for maior ou igual a 4 e menor igual a 7 continuar a condição
+                        if (s == 'recife') {// Se a senha for recife continua a condição
+                            alert ('Logado Com Sucesso, Seja Bem Vindo!'); // Um alert qualquer de bem vindo
+                        pag1.style.display = 'none';// Tiro a primeira página
+                        pag2.style.display = 'block';// Coloco a segunda página
+                        } else {
+                            alert('Digite a senha correta!');// Se a senha nao for igual a recife, retorna um erro
+                        }
+                    } else { // se as condição de digito não for de 0 a 7, retorna esta condição
+                        if (s == 'fortaleza') {// Se a senha for fortaleza continua a condição
+			                alert ('Logado Com Sucesso, Seja Bem Vindo!'); // Um alert qualquer de bem vindo
+                        pag1.style.display = 'none';// Tiro a primeira página
+                        pag2.style.display = 'block';// Coloco a segunda página
+                        } else {
+                            alert('Digite a senha correta!');// Se a senha nao for igual a fortaleza, retorna um erro
+                        }
+                    }
+                }
+            } else {
+                alert('Digite o dígito correto!'); // caso o dígito seja diferente do resto da divisão, retorna um erro
+            }
+        } else {
+            alert('Dígito tem que ser diferente de 0!'); // caso o ipt digito for 0, retorna um erro
+        }
+        
+    }
+    
+    
+    // d)     Ao clicar no botão “Mostrar o Resultado” fazer as seguintes operações:
+    
+    function resultado() {
+        pag2.style.display = 'none'; // tiro a página 2
+        botao.style.display = 'block';// div do botao de voltar simulação aparece
+        op = String(slc_operacoes.value); // atribuo o valor da select operações na variavel op
+        pr = String(slc_prazo.value); // atribuo o valor da select prazos na variavel pr
+        cont++; // Adicionando uma unidade na variavel de simulações feitas
+        v = Number(val_op.value);// atribuindo o valor da ipt valor na variavel v
+        
+        //  ------------------------------------------------------------------------------ ------------------------------------------------------------------------------
+        // b.      Emitir um alerta “Esta operação está condicionada ao seu perfil”, caso o Prazo selecionado seja curto ou médio;
+       if (pr == 'curto' || pr == 'medio') {
+           alert('Esta operação está condicionada ao seu perfil!');
+       } 
+        /*
+
+
+
+        
+        e.       Considerar que a taxa de Empréstimo é de 24% para o curto prazo, 16% para o médio prazo e 10% para o longo prazo.
+        
+        f.        Considerar que a taxa de Investimento é de 5% para o curto prazo, 8% para o médio prazo e 12% para o longo prazo.
+        */                       
+        if (op == 'emprestimo') { // se operação for emprestimo continua a condição
+            if (pr == 'curto') { // se prazo for curto múltiplica o valor * o juros de 24%
+                juros = (v * 0.24);
+            } else {
+                if (pr == 'medio') {// se prazo for medio múltiplica o valor * o juros de 16%
+                    juros = (v * 0.16);
+                } else {
+                    if (pr = 'longo') {// se prazo for longo múltiplica o valor * o juros de 10%
+                        juros = (v * 0.1);
+                    } else {
+                        alert('Selecione um prazo!!'); // se na select não estiver selecionado um prazo, ele retorna um erro
+                    }
+                }
+            }
+        } else { // caso o valor da select nao seja emprestimo, retorna outra condição
+            if (op == 'investimento') {// se operação for investimento continua a condição
+                if (pr == 'curto') {
+                    juros = (v * 0.05);// se prazo for curto múltiplica o valor * o juros de 5%
+                } else {
+                    if (pr == 'medio') {
+                        juros = (v * 0.08);// se prazo for curto múltiplica o valor * o juros de 8%
+                    } else {
+                        if (pr = 'longo') {
+                            juros = (v * 0.12);// se prazo for curto múltiplica o valor * o juros de 12%
+                        } else {
+                            alert('Selecione um prazo!!'); // se na select não estiver selecionado um prazo, ele retorna um erro
+                        }
+                    }
+                }
+            } else {
+                alert('Selecione uma operação!');// se na select não estiver selecionado uma operação, ele retorna um erro
+            }
+        }
+//  ------------------------------------------------------------------------------ ------------------------------------------------------------------------------
+
+
+
+       /* c.       Se a operação for empréstimo, emitir na página, sem apagar as mensagens de simulações anteriores, a seguinte mensagem:
+“Simulação XX – Para o empréstimo de R$99999,99 no PPPPPP prazo será cobrado os juros de R$ 99999,99 ao ano”
+Sendo que XX é um número sequencial crescente a cada simulação, ou seja, 01 para a primeira, 02 para a segunda etc.
+
+d.      Se a operação for investimento, emitir na página, sem apagar as mensagens de simulações anteriores, a seguinte mensagem:
+“Simulação XX – Investindo R$99999,99 no PPPPPP prazo o seu rendimento será de R$ 99999,99 ao ano”
+Sendo que XX é um número sequencial crescente a cada simulação, ou seja, 01 para a primeira, 02 para a segunda etc.
+        */
+
+        if (op == 'emprestimo') {
+            resultados.innerHTML += (`Simulação ${cont} - Para o empréstimo de R$ ${v.toFixed(2)} no ${pr} prazo será cobrado os juros de R$ ${juros} ao ano`);
+        } else {
+            if (op == 'investimento') {
+                resultados.innerHTML = (`Simulação ${cont} - Investimento de R$ ${v.toFixed(2)} no ${pr} prazo o seu rendimento será de ${juros}`);
+            }
+        }
+    
+    }
+//  ------------------------------------------------------------------------------ ------------------------------------------------------------------------------
+
+
+// e)     Tenha um botão “Voltar a Simulação” que quando clicado retorna para o item c).
+    function voltar() {
+        op = ''; // zerando a variavel de operação
+        pr = '';// zerando a variavel de prazo
+        v = 0;// zerando a variavel do ipt valor
+        juros = 0;// zerando a variavel de juros
+        pag2.style.display = 'block'; // pagina 2 aparece novamente
+        resultados.style.display = 'none'; // pagina do resultado desaparece
+        resultados.innerHTML = ''; // apaga o texto da div resultados
+        botao.style.display = 'none'; // botao voltar some
+    }
+
+
+
+</script>

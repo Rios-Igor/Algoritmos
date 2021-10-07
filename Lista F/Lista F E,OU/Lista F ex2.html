@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex2 E/OU</title>
+</head>
+<body>
+    Entre com a sua cor de cabelo: 
+        <select id="slc_cabelo">
+            <option value="0">Selecione Uma Cor De Cabelo</option>
+            <option value="1">Preto</option>
+            <option value="2">Vermelho</option>
+            <option value="3">Amarelo</option>
+            <option value="4">Castanho</option>
+        </select><br>
+        Entre com a sua altura: 
+        <input type="text" id="altura" placeholder="Altura"><br>
+        <button onclick="ver()">Deu Match?</button><br>
+        <img id="resultado" src="" style="width: 300px;">
+
+</body>
+</html>
+<script>
+    function ver(){
+        var a = Number(altura.value);
+        var c = Number(slc_cabelo.value);
+        if (a >= 1.7 && (c == 1 || c == 2)){
+            resultado.src = 'https://www.familia.com.br/wp-content/uploads/2017/12/featuredImageId106336.jpg';
+        }else{
+            resultado.src = 'https://st.depositphotos.com/1773655/1376/i/600/depositphotos_13760820-stock-photo-tired-mature-business-man-in.jpg';
+        }
+    }
+    </script>

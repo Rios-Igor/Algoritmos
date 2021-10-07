@@ -10,6 +10,7 @@
     <!--
         PÁGINA 1
     -->
+    
     <div id="pagina1">
     Entre com o intervalo de altura para os próximos pilotos: 
     <input type="text" id="altura1" placeholder="Altura Inicial" autofocus onchange="alturaini()">
@@ -21,6 +22,7 @@
    
     <button onclick="selecionar()">Selecionar</button>
     </div>
+
     <!--
         PÁGINA 2
     -->
@@ -28,10 +30,12 @@
     <h1>Processo de seleção de novos atletas.</h1>
     <h3>Critério de Seleção de piloto – altura entre <span id="span1"></span></h3>
     <h3>Critério de Seleção de jogador de basquete – altura entre <span id="span2"></span></h3>
+
     Qual o seu nome?
     <input type="text" id="nomecand"><br>
     Entre com sua altura: 
     <input type="text" id="alturacand"><br>
+
     <select onchange="slcmod()" id="slc_mod">
         <option value="0">Selecione uma modalidade</option>
         <option value="1">Piloto</option>
@@ -50,29 +54,6 @@
 
     var acand = 0;
     var nomec = '';
-    function slcmod(){
-        var mod = Number(slc_mod.value);
-        acand = Number(alturacand.value);
-        nomec = String(nomecand.value);
-
-        if (mod == 1){
-            if (acand >= a1 && acand <= a2){
-                resultados.innerHTML += (`O candidato ${nomec} com altura de ${acand} participará do processo de seleção de piloto.<br>`);
-            }else{
-                resultados.innerHTML += (`Infelizmente o candidato ${nomec} com altura de ${acand} não atende os requisitos.<br>`);
-            }
-        }else{
-            if (mod == 2){
-                if (acand >= b1 && acand <= b2){
-                    resultados.innerHTML += (`O candidato ${nomec} com altura de ${acand} participará do processo de seleção de basquete.<br>`);
-                }else{
-                    resultados.innerHTML += (`Infelizmente o candidato ${nomec} com altura de ${acand} não atende os requisitos.<br>`);
-                }
-            }else{
-                
-            }
-        }
-    }
 
     function selecionar(){
         pagina1.style.display = 'none';
@@ -127,6 +108,30 @@
             a2 = 0;
             altura1.value = '';
             altura2.value = '';
+        }
+    }
+    
+    function slcmod(){
+        var mod = Number(slc_mod.value);
+        acand = Number(alturacand.value);
+        nomec = String(nomecand.value);
+
+        if (mod == 1){
+            if (acand >= a1 && acand <= a2){
+                resultados.innerHTML += (`O candidato ${nomec} com altura de ${acand} participará do processo de seleção de piloto.<br>`);
+            }else{
+                resultados.innerHTML += (`Infelizmente o candidato ${nomec} com altura de ${acand} não atende os requisitos.<br>`);
+            }
+        }else{
+            if (mod == 2){
+                if (acand >= b1 && acand <= b2){
+                    resultados.innerHTML += (`O candidato ${nomec} com altura de ${acand} participará do processo de seleção de basquete.<br>`);
+                }else{
+                    resultados.innerHTML += (`Infelizmente o candidato ${nomec} com altura de ${acand} não atende os requisitos.<br>`);
+                }
+            }else{
+                
+            }
         }
     }
     </script>

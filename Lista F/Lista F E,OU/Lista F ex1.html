@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F ex1 E/OU</title>
+</head>
+<body>
+    Entre com a nota de atendimento
+    <input type="text" id="nota" placeholder="Nota"><br>
+    <button onclick="avaliar()">Avaliar Atendimento</button><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function avaliar(){
+        var n = Number(nota.value);
+         if (n < 0 || n < 10){
+             resultados.innerHTML += (`Nota Inválida`);
+         }else{
+             if (n >= 0 && n < 5){
+                 resultados.innerHTML += ('Não Aprovado');
+             }else{
+                 if (n == 5 || n == 6){
+                     resultados.innerHTML += ('Neutro');
+                 }else{
+                     resultados.innerHTML += ('Aprovado');
+                 }
+             }
+         }
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista G ex6</title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear Momento do Dia</button><br><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function sortear(){
+        var r = Math.random();
+        var ini = 0;
+        var fin = 23;
+        var intervalo = fin - ini;
+        var n = r * intervalo + ini;
+        
+        if (n.toFixed() >= 0 && n.toFixed() <= 11){
+            resultados.innerHTML = (`Bom dia, flor do dia! São ${n.toFixed()}`)
+        }else{
+            if (n.toFixed() >= 12 && n.toFixed() <=17){
+                resultados.innerHTML = (`Boa tarde, já vai tarde! São ${n.toFixed()}`);
+            }else{
+                if (n.toFixed() >= 18 && n.toFixed() <= 23){
+                    resultados.innerHTML = (`Boa noite, durma bem! São ${n.toFixed()}`);
+                }else{
+                    alert ('Ops, ocorreu algum erro');
+                }
+            }
+        }
+    }
+    </script>

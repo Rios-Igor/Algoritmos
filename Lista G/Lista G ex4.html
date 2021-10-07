@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista G ex4</title>
+</head>
+<body>
+    <button onclick="jogar()">Sortear Nota Para Aluno</button><br>
+    <div id="resultados"></div>
+</body>
+</html>
+<script>
+    function jogar(){
+        var r = Math.random();
+        var ini = 0;
+        var fin = 10;
+        var i = fin - ini;
+        var n = r * i + ini;
+
+        resultados.innerHTML = (`Nota Do Aluno: ${n.toFixed(2)}`);
+    }
+    </script>

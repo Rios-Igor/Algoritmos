@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista F Desafio Ex8</title>
+</head>
+
+<body>
+    <div id="pag1">
+         
+        <h1>Seja Bem Vindo ao Banco KNAB</h1><br>
+        <h2>Simulação de Empréstimo e Investimentos</h2><br><br><br>
+        <h3>Entre Com os Dados da Sua Conta</h3>
+        <input type="text" id="conta" placeholder="Conta">
+        <input type="texr" id="digito" placeholder="Dígito">
+        <input type="password" id="senha" placeholder="Senha"><br><br>
+        <button onclick="simular()">Simular</button>
+    </div>
+    <div id="pag2" style="display: none;">
+        <h1>O Banco KNAB é a Sua Melhor Opção</h1><br>
+        <h2>Empréstimo e Investimentos com as Melhores Taxas do Mercado</h2><br><br><br>
+        <h3>Entre Com os Dados da Sua Simulação</h3><br><br>
+        <input id="val_op" placeholder="Valor" type="text"><br><br>
+        <select id="slc_operacoes">
+            <option value="0">Escolha uma operação</option>
+            <option value="emprestimo">Empréstimo</option>
+            <option value="investimento">Investimento</option>
+        </select>
+
+        <select id="slc_prazo">
+            <option value="0">Escolha o Prazo</option>
+            <option value="curto">Curto</option>
+            <option value="medio">Médio</option>
+            <option value="longo">Longo</option>
+        </select>
+        <br><br>
+        <button onclick="resultado()">Mostrar Resultado</button>
+    </div><div id="resultados"></div>
+    <div id="botao" style="display: none;">
+        <button onclick="voltar()">Voltar Simulaçao</button>
+    </div>
+</body>
+
+</html>
+<script>
+    var c = 0; 
+    var d = 0; 
+    var s = '';
+    var r = 0; 
+    var cont = 0; 
+    var v = 0; 
+    var op = ''; 
+    var pr = ''; 
+    var juros = 0;
+
+    function simular() {
+        
+        c = Number(conta.value); 
+        d = Number(digito.value); 
+        s = String(senha.value); 
+        r = c % 11;
+
+        if (c != 0) { 
+            if (r == d) {
+                if (r >= 0 && r <= 3) {
+                    if (s == 'manaus') {
+                        alert ('Logado Com Sucesso, Seja Bem Vindo!');
+                        pag1.style.display = 'none';
+                        pag2.style.display = 'block';
+                    } else {
+                        alert('Digite a senha correta!'); 
+                    }
+                } else {
+                    if (r >= 4 && r <= 7) {
+                        if (s == 'recife') {
+                            alert ('Logado Com Sucesso, Seja Bem Vindo!'); 
+                        pag1.style.display = 'none';
+                        pag2.style.display = 'block';
+                        } else {
+                            alert('Digite a senha correta!');
+                        }
+                    } else { 
+                        if (s == 'fortaleza') {
+			                alert ('Logado Com Sucesso, Seja Bem Vindo!'); 
+                        pag1.style.display = 'none';
+                        pag2.style.display = 'block';
+                        } else {
+                            alert('Digite a senha correta!');
+                        }
+                    }
+                }
+            } else {
+                alert('Digite o dígito correto!'); 
+            }
+        } else {
+            alert('Dígito tem que ser diferente de 0!'); 
+        }
+        
+    }
+    
+    function resultado() {
+        pag2.style.display = 'none';
+        botao.style.display = 'block';
+        op = String(slc_operacoes.value);
+        pr = String(slc_prazo.value);
+        cont++;
+        v = Number(val_op.value);
+        
+       if (pr == 'curto' || pr == 'medio') {
+           alert('Esta operação está condicionada ao seu perfil!');
+       } 
+                             
+        if (op == 'emprestimo') { 
+            if (pr == 'curto') {
+                juros = (v * 0.24);
+            } else {
+                if (pr == 'medio') {
+                    juros = (v * 0.16);
+                } else {
+                    if (pr = 'longo') {
+                        juros = (v * 0.1);
+                    } else {
+                        alert('Selecione um prazo!!'); 
+                    }
+                }
+            }
+        } else { 
+            if (op == 'investimento') {
+                if (pr == 'curto') {
+                    juros = (v * 0.05);
+                } else {
+                    if (pr == 'medio') {
+                        juros = (v * 0.08);
+                    } else {
+                        if (pr = 'longo') {
+                            juros = (v * 0.12);
+                        } else {
+                            alert('Selecione um prazo!!'); 
+                        }
+                    }
+                }
+            } else {
+                alert('Selecione uma operação!');
+            }
+        }
+
+        if (op == 'emprestimo') {
+            resultados.innerHTML += (`Simulação ${cont} - Para o empréstimo de R$ ${v.toFixed(2)} no ${pr} prazo será cobrado os juros de R$ ${juros} ao ano`);
+        } else {
+            if (op == 'investimento') {
+                resultados.innerHTML = (`Simulação ${cont} - Investimento de R$ ${v.toFixed(2)} no ${pr} prazo o seu rendimento será de ${juros}`);
+            }
+        }
+    
+    }
+
+
+    function voltar() {
+        op = '';
+        pr = '';
+        v = 0;
+        juros = 0;
+        pag2.style.display = 'block'; 
+        resultados.style.display = 'none';
+        resultados.innerHTML = ''; 
+        botao.style.display = 'none'; 
+    }
+
+
+
+</script>

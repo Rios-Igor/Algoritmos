@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista G ex2</title>
+</head>
+<body>
+    <button onclick="ver()">Sortear time</button>
+    <br>    
+    <img id="resultados" src="" style="height: 150px;">
+</body>
+</html>
+<script>
+    function ver(){
+        var r = Math.random();
+        var i = 4;
+        var f = 1;
+        var intervalo = i - f;
+        var ini = 1;
+        var n = r * intervalo + f;
+        if (n.toFixed() == 1){
+            resultados.src = 'https://logodetimes.com/wp-content/uploads/sao-paulo-capa.jpg';
+        }else{
+            if (n.toFixed() == 2){
+                resultados.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQZNX3JfhWDJd-AHf-Nthg_s2pzOMIigxnL6XIqNedKe0cLq-3SSll2P16eXxMVckSg3A&usqp=CAU';
+            }else{
+                if (n.toFixed() == 3){
+                    resultados.src ='https://www.santosfc.com.br/wp-content/uploads/2017/08/Escudo-sem-estrelas229x220-1.png';
+                }else{
+                    if (n.toFixed() == 4){
+                        resultados.src = 'https://lh3.googleusercontent.com/-Q-V2qmBD5gM/Vamep0Bd2YI/AAAAAAAADwY/1Ei55AbM3L4/s714/palmeiras.png';
+                    }else{
+                        alert ('Ocorreu um erro, tente novamente');
+                    }
+                }
+            }
+        }
+    }
+</script>
