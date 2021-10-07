@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuada 2</title>
+</head>
+<body>
+    <div id="tela1">
+    <h1>SDA - AS MELHORES CAMISETAS DO BRASIL</h1>
+    <br>
+    <br>
+    <input id="qtd_camisetas" type="text" placeholder="Quantidade de Camisetas Solicitadas"><br>
+    <select id="slc_tamanho">
+        <option value="0">Selecione um tamanho</option>
+        <option value="1">Pequeno</option>
+        <option value="2">Grande</option>
+    </select>
+    <select id="slc_produto">
+        <option value="0">Selecione um produto</option>
+        <option value="1">Camiseta Branca</option>
+        <option value="2">Camiseta Colorida</option>
+    </select><br>
+    <input id="distancia" type="text" placeholder="Distancia Para Entrega">
+    <button onclick="orcar()">Orçar</button>
+    </div>
+
+    <div id="resultados" style="display: none;">
+        <h2>Orçamento de Vendas: </h2>
+        <br>
+        Quantidade Solicitada: <span id="quantidade_solicitada"></span><br>
+        Produto Selecionado: <span id="produto_selecionado"></span><br>
+        Tamanho Solicitada: <span id="tamanho_selecionado"></span><br><br>
+        O valor total das mercadorias é de R$ <span id="valor_total"></span>
+<br><br>
+        <span id="viagem"></span><br><br>
+        <button onclick="comprar()">Comprar</button><br>
+        <button onclick="new_orcar()">Novo Orçamento</button>
+    </div>
+
+<div id="sorteio">
+
+</div>
+
+</body>
+</html>
+<script>
+    var valoru = 0;
+    var total = 0;
+    var qc = 0;
+    var tam = 0;
+    var prod = 0;
+    var dist = 0;
+    var taxa = 0;
+    var bonus = 0;  
+    var totalbonus = 0;
+    function orcar(){
+        qc = Number(qtd_camisetas.value);
+        tam = Number(slc_tamanho.value);
+        prod = Number(slc_produto.value);
+        dist = Number(distancia.value);
+        
+        if (qc >= 100 && qc <= 2000){
+            if (tam == 1 || tam == 2){
+                if(prod == 1 || prod == 2){
+                    if (dist > 0){
+                        if (tam == 1 && prod == 1){
+                            valoru = valoru + 15;
+                            total = valoru * qc;
+                            total = total - totalbonus;
+                            tela1.style.display = 'none';
+                            resultados.style.display = 'block';
+                            quantidade_solicitada.innerHTML = (qc);
+                            produto_selecionado.innerHTML = ('Camiseta Branca');
+                            tamanho_selecionado.innerHTML = ('Pequeno');
+                            valor_total.innerHTML = total.toFixed(2);
+                            validacao();
+                        }else{
+                            if (tam == 2 && prod == 1){
+                                valoru = valoru + 16;
+                                total = valoru * qc;
+                                total = total - totalbonus;
+                                tela1.style.display = 'none';
+                            resultados.style.display = 'block';
+                                quantidade_solicitada.innerHTML = (qc);
+                         produto_selecionado.innerHTML = ('Camiseta Branca');
+                            tamanho_selecionado.innerHTML = ('Grande');
+                            valor_total.innerHTML = total.toFixed(2);
+                            validacao();
+                            }else{
+                                if (tam == 1 && prod == 2){
+                                    valoru = valoru + 17;
+                                    total = valoru * qc;
+                                    total = total - totalbonus;
+                                    tela1.style.display = 'none';
+                            resultados.style.display = 'block';
+                                    quantidade_solicitada.innerHTML = (qc);
+                            produto_selecionado.innerHTML = ('Camiseta Colorida');
+                            tamanho_selecionado.innerHTML = ('Pequeno');
+                            valor_total.innerHTML = total.toFixed(2);
+                            validacao();
+                                }else{
+                                    if (tam == 2 && prod == 2){
+                                        valoru = valoru + 18;
+                                        total = valoru * qc;
+                                        total - totalbonus;
+                                        tela1.style.display = 'none';
+                            resultados.style.display = 'block';
+                                        quantidade_solicitada.innerHTML = (qc);
+                            produto_selecionado.innerHTML = ('Camiseta Colorida');
+                            tamanho_selecionado.innerHTML = ('Grande');
+                            valor_total.innerHTML = total.toFixed(2);
+                            validacao();
+                                    }
+                                }
+                            }
+                        }
+                    }else{
+                        alert ('Informar a distância de entrega');
+                    }
+                }else{
+                    alert ('Selecione algo na combo!');
+                }
+            }else{
+                alert ('Selecione algo na combo!');
+            }
+        }else{
+            if(qc < 100){
+                alert ('Vendemos somente no atacado!');
+            }else{
+                if (qc > 2000){
+                alert ('Consulte nosso PCP (planejamento e controle da produção)');    
+                }
+            }
+        }
+    }
+    function validacao(){
+        if (dist > 67){
+            taxa = total * 0.07;
+            viagem.innerHTML = (`Para essa distância será cobrado um adicional de R$ ${taxa.toFixed(2)} para entrega`);
+        }
+    }
+
+    function comprar(){
+        var r = Math.random();
+        var ini = 2.5;
+        var fin = 4.5;
+        var intervalo = fin - ini;
+        bonus = r * intervalo + ini;
+        totalbonus = total * (bonus / 100);
+        alert (`PARABÉNS!!! Você recebeu um bônus de ${bonus.toFixed(1)}%, na sua próxima compra você terá um bônus de R$ ${totalbonus.toFixed(2)}`);
+        limpar();
+    }
+
+    function new_orcar(){
+        bonus = 0;
+        totalbonus = 0;
+        limpar();
+    }
+    function limpar(){
+    valoru = 0;
+    total = 0;
+    qc = 0;
+    tam = 0;
+    prod = 0;
+    dist = 0;
+    taxa = 0;
+    tela1.style.display = 'block';
+    resultados.style.display = 'none';
+    }
+    
+</script>
